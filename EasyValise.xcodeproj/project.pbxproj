@@ -101,8 +101,8 @@
 			children = (
 				79885D8529F584F7007580E6 /* AppDelegate.swift */,
 				79885D8729F584F7007580E6 /* SceneDelegate.swift */,
+				79885DB529F6FC97007580E6 /* Views */,
 				79885D8929F584F7007580E6 /* ViewController.swift */,
-				79885D8B29F584F7007580E6 /* Main.storyboard */,
 				79885D8E29F584F8007580E6 /* Assets.xcassets */,
 				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
 				79885D9329F584F8007580E6 /* Info.plist */,
@@ -125,6 +125,14 @@
 				79885DA829F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift */,
 			);
 			path = EasyValiseUITests;
+			sourceTree = "<group>";
+		};
+		79885DB529F6FC97007580E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79885D8B29F584F7007580E6 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
