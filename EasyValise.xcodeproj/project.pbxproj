@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8529F584F7007580E6 /* AppDelegate.swift */; };
 		79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8729F584F7007580E6 /* SceneDelegate.swift */; };
-		79885D8A29F584F7007580E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8929F584F7007580E6 /* ViewController.swift */; };
+		79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8929F584F7007580E6 /* HomeViewController.swift */; };
 		79885D8D29F584F7007580E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79885D8B29F584F7007580E6 /* Main.storyboard */; };
 		79885D8F29F584F8007580E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79885D8E29F584F8007580E6 /* Assets.xcassets */; };
 		79885D9229F584F8007580E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79885D9029F584F8007580E6 /* LaunchScreen.storyboard */; };
 		79885D9D29F584F8007580E6 /* EasyValiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D9C29F584F8007580E6 /* EasyValiseTests.swift */; };
-		79885DA729F584F8007580E6 /* EasyValiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885DA629F584F8007580E6 /* EasyValiseUITests.swift */; };
-		79885DA929F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885DA829F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +37,7 @@
 		79885D8229F584F7007580E6 /* EasyValise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyValise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79885D8529F584F7007580E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79885D8729F584F7007580E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		79885D8929F584F7007580E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79885D8929F584F7007580E6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		79885D8C29F584F7007580E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79885D8E29F584F8007580E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79885D9129F584F8007580E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,8 +45,6 @@
 		79885D9829F584F8007580E6 /* EasyValiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79885D9C29F584F8007580E6 /* EasyValiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseTests.swift; sourceTree = "<group>"; };
 		79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79885DA629F584F8007580E6 /* EasyValiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseUITests.swift; sourceTree = "<group>"; };
-		79885DA829F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +77,6 @@
 			children = (
 				79885D8429F584F7007580E6 /* EasyValise */,
 				79885D9B29F584F8007580E6 /* EasyValiseTests */,
-				79885DA529F584F8007580E6 /* EasyValiseUITests */,
 				79885D8329F584F7007580E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,12 +94,11 @@
 		79885D8429F584F7007580E6 /* EasyValise */ = {
 			isa = PBXGroup;
 			children = (
-				79885D8529F584F7007580E6 /* AppDelegate.swift */,
-				79885D8729F584F7007580E6 /* SceneDelegate.swift */,
+				79CE863B29F85D4100E83929 /* Models */,
+				79CE863A29F85D3600E83929 /* ViewModels */,
+				79CE863929F85D1100E83929 /* Controllers */,
 				79885DB529F6FC97007580E6 /* Views */,
-				79885D8929F584F7007580E6 /* ViewController.swift */,
-				79885D8E29F584F8007580E6 /* Assets.xcassets */,
-				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
+				79885DB629F71B00007580E6 /* Supporting Files */,
 				79885D9329F584F8007580E6 /* Info.plist */,
 			);
 			path = EasyValise;
@@ -118,21 +112,45 @@
 			path = EasyValiseTests;
 			sourceTree = "<group>";
 		};
-		79885DA529F584F8007580E6 /* EasyValiseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				79885DA629F584F8007580E6 /* EasyValiseUITests.swift */,
-				79885DA829F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift */,
-			);
-			path = EasyValiseUITests;
-			sourceTree = "<group>";
-		};
 		79885DB529F6FC97007580E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				79885D8B29F584F7007580E6 /* Main.storyboard */,
+				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		79885DB629F71B00007580E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79885D8529F584F7007580E6 /* AppDelegate.swift */,
+				79885D8729F584F7007580E6 /* SceneDelegate.swift */,
+				79885D8E29F584F8007580E6 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79CE863929F85D1100E83929 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				79885D8929F584F7007580E6 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		79CE863A29F85D3600E83929 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		79CE863B29F85D4100E83929 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79885D8A29F584F7007580E6 /* ViewController.swift in Sources */,
+				79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */,
 				79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */,
 				79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */,
 			);
@@ -284,8 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79885DA929F584F8007580E6 /* EasyValiseUITestsLaunchTests.swift in Sources */,
-				79885DA729F584F8007580E6 /* EasyValiseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
