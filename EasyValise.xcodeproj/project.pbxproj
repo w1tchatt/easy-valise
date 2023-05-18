@@ -14,6 +14,13 @@
 		79885D8F29F584F8007580E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79885D8E29F584F8007580E6 /* Assets.xcassets */; };
 		79885D9229F584F8007580E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79885D9029F584F8007580E6 /* LaunchScreen.storyboard */; };
 		79885D9D29F584F8007580E6 /* EasyValiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D9C29F584F8007580E6 /* EasyValiseTests.swift */; };
+		79CE863D29F87D0000E83929 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE863C29F87D0000E83929 /* Item.swift */; };
+		79CE863F29F87D4700E83929 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE863E29F87D4700E83929 /* Section.swift */; };
+		79CE864129F87F9A00E83929 /* Suitcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE864029F87F9A00E83929 /* Suitcase.swift */; };
+		79CE864629FAC52600E83929 /* EasyValise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79CE864429FAC52600E83929 /* EasyValise.xcdatamodeld */; };
+		79CE864929FAC55900E83929 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE864829FAC55900E83929 /* CoreDataService.swift */; };
+		79CE868A29FD241D00E83929 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE868929FD241D00E83929 /* Travel.swift */; };
+		79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		79885D9829F584F8007580E6 /* EasyValiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79885D9C29F584F8007580E6 /* EasyValiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseTests.swift; sourceTree = "<group>"; };
 		79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79CE863C29F87D0000E83929 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		79CE863E29F87D4700E83929 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		79CE864029F87F9A00E83929 /* Suitcase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suitcase.swift; sourceTree = "<group>"; };
+		79CE864529FAC52600E83929 /* EasyValise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyValise.xcdatamodel; sourceTree = "<group>"; };
+		79CE864829FAC55900E83929 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		79CE868929FD241D00E83929 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 		79885D8429F584F7007580E6 /* EasyValise */ = {
 			isa = PBXGroup;
 			children = (
+				79CE864729FAC52E00E83929 /* Core Data */,
 				79CE863B29F85D4100E83929 /* Models */,
 				79CE863A29F85D3600E83929 /* ViewModels */,
 				79CE863929F85D1100E83929 /* Controllers */,
@@ -149,8 +164,22 @@
 		79CE863B29F85D4100E83929 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				79CE863C29F87D0000E83929 /* Item.swift */,
+				79CE863E29F87D4700E83929 /* Section.swift */,
+				79CE864029F87F9A00E83929 /* Suitcase.swift */,
+				79CE868929FD241D00E83929 /* Travel.swift */,
+				79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		79CE864729FAC52E00E83929 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				79CE864429FAC52600E83929 /* EasyValise.xcdatamodeld */,
+				79CE864829FAC55900E83929 /* CoreDataService.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CE863F29F87D4700E83929 /* Section.swift in Sources */,
+				79CE863D29F87D0000E83929 /* Item.swift in Sources */,
+				79CE864129F87F9A00E83929 /* Suitcase.swift in Sources */,
 				79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */,
+				79CE864629FAC52600E83929 /* EasyValise.xcdatamodeld in Sources */,
+				79CE868A29FD241D00E83929 /* Travel.swift in Sources */,
 				79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */,
+				79CE864929FAC55900E83929 /* CoreDataService.swift in Sources */,
+				79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */,
 				79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +662,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79CE864429FAC52600E83929 /* EasyValise.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79CE864529FAC52600E83929 /* EasyValise.xcdatamodel */,
+			);
+			currentVersion = 79CE864529FAC52600E83929 /* EasyValise.xcdatamodel */;
+			path = EasyValise.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 79885D7A29F584F7007580E6 /* Project object */;
 }
