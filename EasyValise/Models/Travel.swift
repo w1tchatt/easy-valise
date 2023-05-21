@@ -11,11 +11,11 @@ class Travel: Codable {
     var name: String
     var date: Date
     
-    var suicase: Suitcase
+    var suitcase: Suitcase
     
     init(name: String, date: Date, suitcase: Suitcase) {
         self.name = name
         self.date = date
-        self.suicase = suitcase
+        self.suitcase = suitcase
     }
 }

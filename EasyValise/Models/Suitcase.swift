@@ -8,8 +8,5 @@
 import Foundation
 
 struct Suitcase: Codable {
-    var allItems: [Item]
+    var items: [Item]
 }
-
-
-var test: [Item] = SuitcaseModels.longTravelSummer

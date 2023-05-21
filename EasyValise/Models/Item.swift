@@ -22,7 +22,7 @@ class Item: Codable {
         self.isChecked = isChecked
         self.section = section
     }
-
+    
 }
 
 //class Item: NSManagedObject {

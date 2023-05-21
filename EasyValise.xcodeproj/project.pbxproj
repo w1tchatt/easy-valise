@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79795E022A17A2A00066FDC7 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E012A17A2A00066FDC7 /* TravelListViewController.swift */; };
+		79795E042A1A84E60066FDC7 /* CreateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */; };
 		79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8529F584F7007580E6 /* AppDelegate.swift */; };
 		79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8729F584F7007580E6 /* SceneDelegate.swift */; };
 		79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D8929F584F7007580E6 /* HomeViewController.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79795E012A17A2A00066FDC7 /* TravelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
+		79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewController.swift; sourceTree = "<group>"; };
 		79885D8229F584F7007580E6 /* EasyValise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyValise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79885D8529F584F7007580E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79885D8729F584F7007580E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				79885D8929F584F7007580E6 /* HomeViewController.swift */,
+				79795E012A17A2A00066FDC7 /* TravelListViewController.swift */,
+				79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,7 +325,9 @@
 				79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */,
 				79CE864629FAC52600E83929 /* EasyValise.xcdatamodeld in Sources */,
 				79CE868A29FD241D00E83929 /* Travel.swift in Sources */,
+				79795E022A17A2A00066FDC7 /* TravelListViewController.swift in Sources */,
 				79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */,
+				79795E042A1A84E60066FDC7 /* CreateTravelViewController.swift in Sources */,
 				79CE864929FAC55900E83929 /* CoreDataService.swift in Sources */,
 				79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */,
 				79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */,

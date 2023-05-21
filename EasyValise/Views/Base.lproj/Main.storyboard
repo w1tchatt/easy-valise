@@ -12,58 +12,84 @@
     </dependencies>
     <scenes>
         <!--Mes voyages-->
-        <scene sceneID="i0a-v4-f43">
+        <scene sceneID="atB-5Z-t9Q">
             <objects>
-                <tableViewController id="517-4h-P8Z" customClass="HomeViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="xJD-wa-7Gw">
+                <viewController id="p1T-et-2pu" customClass="HomeViewController" customModule="EasyValise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bqv-pX-s4L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-S2-l7K">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelCell" id="AN3-xE-gpz">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AN3-xE-gpz" id="b1C-Gv-kZ1">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wt0-cU-KUe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9Ac-it-Xk5">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ac-it-Xk5" id="rSP-fJ-vrw">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="517-4h-P8Z" id="Zxa-j0-nN4"/>
-                            <outlet property="delegate" destination="517-4h-P8Z" id="dhc-Cs-avr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Mes voyages" id="cO4-iU-pCv"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q7X-ox-zRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="fGv-S2-l7K" firstAttribute="trailing" secondItem="wt0-cU-KUe" secondAttribute="trailing" id="azI-yy-fl6"/>
+                            <constraint firstItem="fGv-S2-l7K" firstAttribute="bottom" secondItem="wt0-cU-KUe" secondAttribute="bottom" id="r0Q-tC-uIW"/>
+                            <constraint firstItem="fGv-S2-l7K" firstAttribute="leading" secondItem="wt0-cU-KUe" secondAttribute="leading" id="wJP-UG-L14"/>
+                            <constraint firstItem="fGv-S2-l7K" firstAttribute="top" secondItem="wt0-cU-KUe" secondAttribute="top" id="wpr-Vg-9Ch"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mes voyages" id="wcA-36-Q83"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="fGv-S2-l7K" id="05X-Bq-upE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blm-Oe-QXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263" y="132"/>
+            <point key="canvasLocation" x="1013" y="132"/>
         </scene>
-        <!--View Controller-->
+        <!--Travel List View Controller-->
         <scene sceneID="gcs-HV-vYm">
             <objects>
-                <viewController id="agj-KI-EE3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kiU-L3-eKJ" customClass="SuitcaseViewController">
+                <viewController storyboardIdentifier="TravelListViewController" id="agj-KI-EE3" customClass="TravelListViewController" customModule="EasyValise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kiU-L3-eKJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYU-BR-Srt">
-                                <rect key="frame" x="-2" y="59" width="393" height="44"/>
+                                <rect key="frame" x="-7" y="59" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Paris 01/05/2023" id="bmc-aX-Bav"/>
+                                    <navigationItem id="bmc-aX-Bav"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y2K-7v-J56">
                                 <rect key="frame" x="0.0" y="103" width="393" height="682"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="nk4-QN-3YA">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nk4-QN-3YA" id="A5w-0B-fZ6">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dpF-B1-4cq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Nkv-Ru-Gc4"/>
+                    <connections>
+                        <outlet property="listItemsTableView" destination="Y2K-7v-J56" id="DeR-ta-Xob"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Asc-nW-alX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-iA-D02">
-                                <rect key="frame" x="-2" y="59" width="392" height="44"/>
+                                <rect key="frame" x="-8" y="59" width="390" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Créer un voyage" id="txO-Tl-HWe"/>
@@ -111,7 +137,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Continuer"/>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="R6y-76-XfB">
-                                <rect key="frame" x="-2" y="368" width="392" height="52"/>
+                                <rect key="frame" x="-8" y="368" width="390" height="52"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                         </subviews>
@@ -132,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcA-gK-09F">
-                                <rect key="frame" x="-2" y="59" width="393" height="44"/>
+                                <rect key="frame" x="-8" y="59" width="394" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Créer un voyage" id="RrG-n0-gfV"/>
@@ -178,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VmR-0h-ck7">
-                                <rect key="frame" x="-2" y="59" width="393" height="44"/>
+                                <rect key="frame" x="-8" y="59" width="394" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Créer un voyage" id="J5k-ri-Q3w"/>
@@ -251,7 +277,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="517-4h-P8Z" kind="relationship" relationship="rootViewController" id="BrV-DR-TOu"/>
+                        <segue destination="p1T-et-2pu" kind="relationship" relationship="rootViewController" id="CsQ-81-tQZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmg-YE-sgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -262,7 +288,7 @@
     <resources>
         <image name="globe.europe.africa.fill" catalog="system" width="128" height="123"/>
         <namedColor name="OrangeStrong">
-            <color red="1" green="0.38039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.37999999523162842" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
