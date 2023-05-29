@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Section : String, Codable {
+enum Section: String, Codable {
     case clothes = "Vêtements"
     case toiletItems = "Articles de toilette"
     case accessories = "Accessoires"

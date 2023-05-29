@@ -65,22 +65,21 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
             var content = cell.defaultContentConfiguration()
             content.text = "CREER UN NOUVEAU VOYAGE"
-            cell.accessoryType = .checkmark
-            cell.accessoryView = UISwitch()
             cell.contentConfiguration = content
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row != travels.count {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let travelListViewController = storyboard.instantiateViewController(withIdentifier: "TravelListViewController") as? TravelListViewController {
                 travelListViewController.travel = travels[indexPath.row]
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
         } else {
-// create travel
+            if let createTravelViewController = storyboard.instantiateViewController(withIdentifier: "CreateTravelViewController") as? CreateTravelViewController {
+                self.navigationController?.pushViewController(createTravelViewController, animated: true)
             }
         }
     }

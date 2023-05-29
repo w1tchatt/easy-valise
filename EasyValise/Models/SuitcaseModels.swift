@@ -7,6 +7,38 @@
 
 import Foundation
 
+enum SuitcasesModelsEnum: CaseIterable {
+    case shortTravelSummer
+    case longTravelSummer
+    case shortTravelWinter
+    case longTravelWinter
+    
+    var name: String {
+        switch self {
+        case .shortTravelSummer:
+            return "Valise été court"
+        case .longTravelSummer:
+            return "Valise été long"
+        case .shortTravelWinter:
+            return "Valise hiver court"
+        case .longTravelWinter:
+            return "Valise hiver long"
+        }
+    }
+    
+    var model: [Item] {
+        switch self {
+        case .shortTravelSummer:
+            return SuitcaseModels.shortTravelSummer
+        case .longTravelSummer:
+            return SuitcaseModels.longTravelSummer
+        case .shortTravelWinter:
+            return SuitcaseModels.shortTravelWinter
+        case .longTravelWinter:
+            return SuitcaseModels.longTravelWinter
+        }
+    }
+}
 
 class SuitcaseModels: Codable {
     
