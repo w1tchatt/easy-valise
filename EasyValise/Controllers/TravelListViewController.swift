@@ -9,14 +9,12 @@ import UIKit
 
 class TravelListViewController: UIViewController {
     var travel: Travel = Travel(name: "", date: .now, suitcase: Suitcase(items: [Item(name: "", isChecked: false, section: Section.drugs.rawValue)]))
-    private var sectionsUsed: Set<String> = []
     private var sectionsName:[String] = []
     
     @IBOutlet weak var listItemsTableView: UITableView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.listItemsTableView.reloadData()
         self.listItemsTableView.delegate = self
         self.listItemsTableView.dataSource = self
         
@@ -28,15 +26,18 @@ class TravelListViewController: UIViewController {
 extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func defineSectionsToShow() {
+        var sectionsUsed: Set<String> = []
         for item in travel.suitcase.items {
             sectionsUsed.insert(item.section)
         }
-        // mal trié
-        sectionsName = Array(sectionsUsed).sorted { $0 < $1 }
+        sectionsName = Array(sectionsUsed)
+        sectionsName = sectionsName.sorted { $0 < $1 }
     }
     
+   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionsUsed.count
+       return sectionsName.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -44,9 +45,7 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionType = Array(sectionsUsed)[section]
-        
-        let itemsInSection = travel.suitcase.items.filter { $0.section == sectionType }
+        let itemsInSection = travel.suitcase.items.filter { $0.section == sectionsName[section] }
         return itemsInSection.count
     }
     
@@ -71,15 +70,22 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc private func switchChanged(_ sender: UISwitch) {
-        let point = sender.convert(CGPoint.zero, to: listItemsTableView)
-        guard let indexPath = listItemsTableView.indexPathForRow(at: point) else {
+
+        guard let cell = sender.superview as? UITableViewCell else {
+            return
+        }
+
+        guard let indexPath = listItemsTableView.indexPath(for: cell) else {
             return
         }
         
-        let sectionType = Array(sectionsUsed)[indexPath.section]
-        let itemsInSection = travel.suitcase.items.filter { $0.section == sectionType }
-        let sortedItems = itemsInSection.sorted { $0.name < $1.name }
-        let item = sortedItems[indexPath.row]
+//        let point = sender.convert(CGPoint.zero, to: listItemsTableView)
+//        guard let indexPath = listItemsTableView.indexPathForRow(at: point) else {
+//            return
+//        }
+        
+        let itemsInSection = travel.suitcase.items.filter { $0.section == sectionsName[indexPath.section] }
+        let item = itemsInSection[indexPath.row]
         item.isChecked = sender.isOn
         self.listItemsTableView.reloadData()
     }

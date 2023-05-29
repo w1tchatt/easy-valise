@@ -12,9 +12,7 @@ import CoreData
 class Item: Codable {
     
     var name: String
-    
     var isChecked: Bool
-    
     var section: Section.RawValue
     
     init(name: String, isChecked: Bool, section: Section.RawValue) {
@@ -22,7 +20,6 @@ class Item: Codable {
         self.isChecked = isChecked
         self.section = section
     }
-    
 }
 
 //class Item: NSManagedObject {
