@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct Suitcase: Codable {
+class Suitcase: Codable {
     var items: [Item]
+    
+    init(items:[Item]) {
+        self.items = items
+    }
 }
