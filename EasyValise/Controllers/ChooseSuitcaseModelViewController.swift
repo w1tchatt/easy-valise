@@ -50,7 +50,7 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollect
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let validateSuitcaseViewController = storyboard.instantiateViewController(withIdentifier: "ValidateSuitcaseViewController") as? ValidateSuitcaseViewController {
+        if let validateSuitcaseViewController = storyboard.instantiateViewController(withIdentifier: "ValidateTravelViewController") as? ValidateTravelViewController {
             validateSuitcaseViewController.items = suitcaseCases[indexPath.row].model
             validateSuitcaseViewController.suitcaseModelName = suitcaseCases[indexPath.row].name
             validateSuitcaseViewController.travelName = self.travelName

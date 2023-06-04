@@ -10,6 +10,7 @@
     </entity>
     <entity name="TravelData" representedClassName=".TravelData" syncable="YES" codeGenerationType="category">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="suitcase" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SuitcaseData"/>
     </entity>

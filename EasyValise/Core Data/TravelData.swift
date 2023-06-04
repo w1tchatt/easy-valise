@@ -22,12 +22,13 @@ final class TravelData: NSManagedObject {
 extension TravelData {
     func toTravel() -> Travel? {
        guard let name = self.name,
-          let date = self.date,
-          let suitcaseData = self.suitcase else {
-           return nil
+             let date = self.date,
+             let suitcaseData = self.suitcase,
+             let id = self.id else {
+            return nil
        }
         guard let suitcase = suitcaseData.toSuitcase() else { return nil }
-        return Travel(name: name, date: date, suitcase: suitcase)
+        return Travel(name: name, date: date, suitcase: suitcase, id: id)
     }
 }
 

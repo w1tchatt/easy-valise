@@ -11,6 +11,8 @@ class TravelListViewController: UIViewController {
     var travel: Travel = Travel(name: "", date: .now, suitcase: Suitcase(items: [Item(name: "", isChecked: false, section: Section.drugs.rawValue)]))
     private var sectionsName:[String] = []
     
+    let travelListViewModel = TravelListViewModel()
+    
     @IBOutlet weak var listItemsTableView: UITableView!
   
     override func viewDidLoad() {
@@ -79,15 +81,18 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-//        let point = sender.convert(CGPoint.zero, to: listItemsTableView)
-//        guard let indexPath = listItemsTableView.indexPathForRow(at: point) else {
-//            return
-//        }
-        
         let itemsInSection = travel.suitcase.items.filter { $0.section == sectionsName[indexPath.section] }
         let item = itemsInSection[indexPath.row]
-        item.isChecked = sender.isOn
-        self.listItemsTableView.reloadData()
+        
+        travelListViewModel.updateIdChecked(for: travel, item: item, isChecked: sender.isOn) { success in
+            if success {
+                item.isChecked = sender.isOn
+                self.listItemsTableView.reloadData()
+            } else {
+                #warning("put a warning message")
+            }
+        }
+        
     }
 }
 

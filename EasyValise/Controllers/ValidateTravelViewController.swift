@@ -1,5 +1,5 @@
 //
-//  ValidateSuitcaseViewController.swift
+//  ValidateTravelViewController.swift
 //  EasyValise
 //
 //  Created by Richard Sourianarayanane on 28/05/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValidateSuitcaseViewController: UIViewController {
+class ValidateTravelViewController: UIViewController {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var previewItemsTableview: UITableView!
@@ -16,6 +16,8 @@ class ValidateSuitcaseViewController: UIViewController {
     var travelDate: Date!
     var suitcaseModelName: String = ""
     var items: [Item] = []
+    
+    let validateTravelViewModel = ValidateTravelViewModel()
     private var sectionsName:[String] = []
     
     
@@ -36,20 +38,23 @@ class ValidateSuitcaseViewController: UIViewController {
         let newTravel = Travel(name: self.travelName, date: self.travelDate, suitcase: Suitcase(items: self.items))
         
         // send newTravel to viewModel to be save in Coredata
-        
-        if let navigationController = navigationController {
-            let viewControllers = navigationController.viewControllers
-            for viewController in viewControllers {
-                if viewController is HomeViewController {
-                    navigationController.popToViewController(viewController, animated: true)
-                    break
+        validateTravelViewModel.saveInCoreData(travel: newTravel) { [weak self] success in
+            if let navigationController = self?.navigationController {
+                let viewControllers = navigationController.viewControllers
+                for viewController in viewControllers {
+                    if let homeViewController = viewController as? HomeViewController {
+                        self?.navigationController?.popToViewController(homeViewController, animated: true)
+                        homeViewController.updateTravels()
+                    }
                 }
+            } else {
+                #warning("put an alert for retry")
             }
         }
     }
 }
 
-extension ValidateSuitcaseViewController: UITableViewDelegate, UITableViewDataSource {
+extension ValidateTravelViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func defineSectionsToShow() {
         var sectionsUsed: Set<String> = []

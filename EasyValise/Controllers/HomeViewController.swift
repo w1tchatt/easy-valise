@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     
     #warning("Temporaire, appeler les infos de coredata")
-    let travel1 = Travel(name: "Paris", date: .now, suitcase: Suitcase(items: SuitcaseModels.shortTravelSummer))
+    let travelViewModel = TravelViewModel()
+    //let travel1 = Travel(name: "Paris", date: .now, suitcase: Suitcase(items: SuitcaseModels.shortTravelSummer))
     var travels: [Travel]!
     
 
@@ -21,27 +22,23 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        travels = [travel1]
+        //travels = [travel1]
+        
+        updateTravels()
         
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
         self.homeTableView.reloadData()
-
     }
-
-
-//    func createItem(name: String, isChecked: Bool, section: Section) {
-//        let newItem = Item(context: CoreDataService.shared.viewContext)
-//        newItem.name = name
-//        newItem.isChecked = isChecked
-//        newItem.section = section
-//        CoreDataService.shared.saveContext()
-//    }
     
-    func createItem(name: String, isChecked: Bool, section: Section) {
-        let item1 = Item(name: "Shampoing", isChecked: false, section: Section.clothes.rawValue)
-        let item2 = Item(name: "Dentifrice", isChecked: false, section: Section.clothes.rawValue)
-        let newTravel = Travel(name: "Paris", date: .now, suitcase: Suitcase(items: [item1, item2]))
+    func updateTravels() {
+        travelViewModel.getTravels { [weak self] success, theTravels in
+            if success {
+                self?.travels = theTravels
+            } else {
+                self?.travels = []
+            }
+        }
     }
 }
 
