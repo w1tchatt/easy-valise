@@ -36,8 +36,6 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         sectionsName = sectionsName.sorted { $0 < $1 }
     }
     
-   
-    
     func numberOfSections(in tableView: UITableView) -> Int {
        return sectionsName.count
     }
@@ -55,7 +53,8 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = listItemsTableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         let section = sectionsName[indexPath.section]
         let itemsInSection = travel.suitcase.items.filter { $0.section == section }
-        let item = itemsInSection[indexPath.row]
+        let itemsInSectionOrdered = itemsInSection.sorted { $0.name < $1.name }
+        let item = itemsInSectionOrdered[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = item.name
         
@@ -82,7 +81,8 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let itemsInSection = travel.suitcase.items.filter { $0.section == sectionsName[indexPath.section] }
-        let item = itemsInSection[indexPath.row]
+        let itemsInSectionOrdered = itemsInSection.sorted { $0.name < $1.name }
+        let item = itemsInSectionOrdered[indexPath.row]
         
         travelListViewModel.updateIdChecked(for: travel, item: item, isChecked: sender.isOn) { success in
             if success {

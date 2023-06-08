@@ -22,13 +22,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //travels = [travel1]
-        
         updateTravels()
         
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
-        self.homeTableView.reloadData()
     }
     
     func updateTravels() {
@@ -39,6 +36,7 @@ class HomeViewController: UIViewController {
                 self?.travels = []
             }
         }
+        self.homeTableView.reloadData()
     }
 }
 
@@ -54,8 +52,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
             var content = cell.defaultContentConfiguration()
             content.text = travels[indexPath.row].name
-            #warning("TODO formattage de la date")
-            content.secondaryText = String(describing: travels[indexPath.row].date)
+            let date = dateFormatted(date: travels[indexPath.row].date)
+            content.secondaryText = date
             cell.contentConfiguration = content
             return cell
         } else {
@@ -79,6 +77,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(createTravelViewController, animated: true)
             }
         }
+    }
+    
+    private func dateFormatted(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: date)
     }
     
     
