@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		79795E022A17A2A00066FDC7 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E012A17A2A00066FDC7 /* TravelListViewController.swift */; };
 		79795E042A1A84E60066FDC7 /* CreateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */; };
-		79795E062A1BA2700066FDC7 /* TravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E052A1BA2700066FDC7 /* TravelViewModel.swift */; };
+		79795E062A1BA2700066FDC7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E052A1BA2700066FDC7 /* HomeViewModel.swift */; };
 		79795E082A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E072A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift */; };
 		7987226C2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */; };
 		7987226D2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */; };
@@ -54,7 +54,7 @@
 /* Begin PBXFileReference section */
 		79795E012A17A2A00066FDC7 /* TravelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
 		79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewController.swift; sourceTree = "<group>"; };
-		79795E052A1BA2700066FDC7 /* TravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewModel.swift; sourceTree = "<group>"; };
+		79795E052A1BA2700066FDC7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		79795E072A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSuitcaseModelViewController.swift; sourceTree = "<group>"; };
 		7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSuitcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelSuitcaseCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		79CE863A29F85D3600E83929 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				79795E052A1BA2700066FDC7 /* TravelViewModel.swift */,
+				79795E052A1BA2700066FDC7 /* HomeViewModel.swift */,
 				798722F22A2BB01600CF4ECA /* ValidateTravelViewModel.swift */,
 				798722F42A2BDE3500CF4ECA /* TravelListViewModel.swift */,
 			);
@@ -374,7 +374,7 @@
 				79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */,
 				79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */,
 				79795E082A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift in Sources */,
-				79795E062A1BA2700066FDC7 /* TravelViewModel.swift in Sources */,
+				79795E062A1BA2700066FDC7 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

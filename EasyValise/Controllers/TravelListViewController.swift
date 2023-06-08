@@ -72,6 +72,7 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc private func switchChanged(_ sender: UISwitch) {
 
+        // faire une cell dédiée 
         guard let cell = sender.superview as? UITableViewCell else {
             return
         }

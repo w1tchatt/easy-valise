@@ -44,7 +44,7 @@ class ValidateTravelViewController: UIViewController {
                 for viewController in viewControllers {
                     if let homeViewController = viewController as? HomeViewController {
                         self?.navigationController?.popToViewController(homeViewController, animated: true)
-                        homeViewController.updateTravels()
+                        homeViewController.getTravels()
                     }
                 }
             } else {

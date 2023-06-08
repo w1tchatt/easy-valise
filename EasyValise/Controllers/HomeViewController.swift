@@ -12,28 +12,22 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
     
-    #warning("Temporaire, appeler les infos de coredata")
-    let travelViewModel = TravelViewModel()
+    let homeViewModel = HomeViewModel()
     //let travel1 = Travel(name: "Paris", date: .now, suitcase: Suitcase(items: SuitcaseModels.shortTravelSummer))
-    var travels: [Travel]!
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateTravels()
+        getTravels()
         
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
     }
     
-    func updateTravels() {
-        travelViewModel.getTravels { [weak self] success, theTravels in
-            if success {
-                self?.travels = theTravels
-            } else {
-                self?.travels = []
+    func getTravels() {
+        homeViewModel.getTravels { [weak self] success in
+            if !success {
+                #warning("Put an alert warning")
             }
         }
         self.homeTableView.reloadData()
@@ -43,16 +37,17 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return travels.count+1
+        //return travels.count+1
+        return homeViewModel.travels.count+1
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row != travels.count{
+        if indexPath.row != homeViewModel.travels.count{
             let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
             var content = cell.defaultContentConfiguration()
-            content.text = travels[indexPath.row].name
-            let date = dateFormatted(date: travels[indexPath.row].date)
+            content.text = homeViewModel.travels[indexPath.row].name
+            let date = homeViewModel.dateFormatted(date: homeViewModel.travels[indexPath.row].date)
             content.secondaryText = date
             cell.contentConfiguration = content
             return cell
@@ -67,9 +62,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if indexPath.row != travels.count {
+        if indexPath.row != homeViewModel.travels.count {
             if let travelListViewController = storyboard.instantiateViewController(withIdentifier: "TravelListViewController") as? TravelListViewController {
-                travelListViewController.travel = travels[indexPath.row]
+                travelListViewController.travel = homeViewModel.travels[indexPath.row]
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
         } else {
@@ -77,13 +72,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(createTravelViewController, animated: true)
             }
         }
-    }
-    
-    private func dateFormatted(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: date)
-    }
-    
-    
+    }    
 }
