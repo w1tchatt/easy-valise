@@ -37,13 +37,7 @@ final class CreateTravelViewController: UIViewController {
                 self.navigationController?.pushViewController(chooseModelSuitcaseViewController, animated: true)
             }
         } else {
-            displayAlertInfo(title: "Erreur", message: "Merci de renseigner une destination valide")
+            AlertInfo.display(title: "Erreur", message: "Merci de renseigner une destination valide", vc: self)
         }
-    }
-    
-    private func displayAlertInfo(title: String, message: String) {
-        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
     }
 }

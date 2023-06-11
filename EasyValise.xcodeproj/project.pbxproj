@@ -13,6 +13,7 @@
 		79795E082A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E072A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift */; };
 		797FA7FD2A32791400418F61 /* ChooseSuitcaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7FC2A32791400418F61 /* ChooseSuitcaseViewModel.swift */; };
 		797FA7FF2A34B52F00418F61 /* CreateTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA7FE2A34B52F00418F61 /* CreateTravelViewModel.swift */; };
+		797FA8022A35D76000418F61 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8012A35D76000418F61 /* AlertInfo.swift */; };
 		7987226C2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */; };
 		7987226D2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */; };
 		798722702A23EF1C00CF4ECA /* ValidateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987226F2A23EF1C00CF4ECA /* ValidateTravelViewController.swift */; };
@@ -60,6 +61,7 @@
 		79795E072A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSuitcaseModelViewController.swift; sourceTree = "<group>"; };
 		797FA7FC2A32791400418F61 /* ChooseSuitcaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSuitcaseViewModel.swift; sourceTree = "<group>"; };
 		797FA7FE2A34B52F00418F61 /* CreateTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewModel.swift; sourceTree = "<group>"; };
+		797FA8012A35D76000418F61 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSuitcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelSuitcaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		7987226F2A23EF1C00CF4ECA /* ValidateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTravelViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		797FA8002A35D74300418F61 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				797FA8012A35D76000418F61 /* AlertInfo.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		7987226E2A22791D00CF4ECA /* ModelSuitcaseCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 		79885DB629F71B00007580E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				797FA8002A35D74300418F61 /* Utils */,
 				79885D8529F584F7007580E6 /* AppDelegate.swift */,
 				79885D8729F584F7007580E6 /* SceneDelegate.swift */,
 				79885D8E29F584F8007580E6 /* Assets.xcassets */,
@@ -373,6 +384,7 @@
 				79885D8629F584F7007580E6 /* AppDelegate.swift in Sources */,
 				798722722A24B68300CF4ECA /* TravelData.swift in Sources */,
 				798722F52A2BDE3500CF4ECA /* TravelListViewModel.swift in Sources */,
+				797FA8022A35D76000418F61 /* AlertInfo.swift in Sources */,
 				798722702A23EF1C00CF4ECA /* ValidateTravelViewController.swift in Sources */,
 				798722F12A293B3100CF4ECA /* EasyValiseRepository.swift in Sources */,
 				797FA7FF2A34B52F00418F61 /* CreateTravelViewModel.swift in Sources */,

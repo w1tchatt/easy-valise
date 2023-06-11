@@ -83,10 +83,31 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
                 item.isChecked = sender.isOn
                 self?.listItemsTableView.reloadData()
             } else {
-                #warning("put a warning message")
+                sender.isOn = !sender.isOn
+                self?.displayAlertRetry(sender: sender)
             }
         }
+    }
         
+    private func displayAlertRetry(sender: UISwitch) {
+        // Declare Alert message
+        let dialogMessage = UIAlertController(title: "Erreur", message: "Une erreur est survenue lors de la sauvegarde de l'information. Réessayez ?", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "Oui", style: .default, handler: { [weak self] (action) -> Void in
+            self?.switchChanged(sender)
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "Annuler", style: .cancel) { [] (action) -> Void in
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        // Present dialog message to user
+        present(dialogMessage, animated: true, completion: nil)
     }
 }
 

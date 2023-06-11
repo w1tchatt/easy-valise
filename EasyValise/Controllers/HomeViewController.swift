@@ -29,7 +29,8 @@ class HomeViewController: UIViewController {
     func getTravels() {
         homeViewModel.getTravels { [weak self] success in
             if !success {
-                #warning("Put an alert warning")
+                guard let vc = self else {return}
+                AlertInfo.display(title: "Erreur", message: "Erreur lors du chargement des données.", vc: vc)
             }
             self?.homeTableView.reloadData()
         }

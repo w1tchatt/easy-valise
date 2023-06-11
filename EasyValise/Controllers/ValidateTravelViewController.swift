@@ -39,8 +39,12 @@ class ValidateTravelViewController: UIViewController {
     @IBAction func validateTravel(_ sender: UIButton) {
         // save in Coredata
         validateTravelViewModel.saveInCoreData() { [weak self] success in
-            self?.navigationController?.popToRootViewController(animated: true)
-            
+            if !success {
+                self?.navigationController?.popToRootViewController(animated: true)
+            } else {
+                guard let vc = self else {return}
+                AlertInfo.display(title: "Erreur", message: "Merci de réessayer.", vc: vc)
+            }
         }
     }
 }
