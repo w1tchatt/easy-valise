@@ -11,9 +11,16 @@ class ChooseSuitcaseModelViewController: UIViewController {
 
     @IBOutlet weak var modelSuitCaseCollectionView: UICollectionView?
 
-    let suitcaseCases: [SuitcasesModelsEnum] = SuitcasesModelsEnum.allCases
-    var travelName: String = ""
-    var travelDate: Date! = nil
+    var chooseSuitcaseViewModel: ChooseSuicaseViewModel!
+    
+    init(chooseSuitcaseViewModel: ChooseSuicaseViewModel) {
+        self.chooseSuitcaseViewModel = chooseSuitcaseViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +44,13 @@ class ChooseSuitcaseModelViewController: UIViewController {
 
 extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return suitcaseCases.count
+        return chooseSuitcaseViewModel.suitcaseCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = modelSuitCaseCollectionView?.dequeueReusableCell(withReuseIdentifier: "ModelSuitcase", for: indexPath) as? ModelSuitcaseCollectionViewCell else {return UICollectionViewCell()}
-        let suitcaseModel = suitcaseCases[indexPath.row]
+        // idéalement créer un viewmodel pour la cell pour set up la celle
+        let suitcaseModel = chooseSuitcaseViewModel.suitcaseCases[indexPath.row]
         cell.configCell(suitCaseName: suitcaseModel.name)
         //cell.backgroundColor = .randomColor()
         return cell
@@ -51,10 +59,10 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let validateSuitcaseViewController = storyboard.instantiateViewController(withIdentifier: "ValidateTravelViewController") as? ValidateTravelViewController {
-            validateSuitcaseViewController.items = suitcaseCases[indexPath.row].model
-            validateSuitcaseViewController.suitcaseModelName = suitcaseCases[indexPath.row].name
-            validateSuitcaseViewController.travelName = self.travelName
-            validateSuitcaseViewController.travelDate = self.travelDate
+            let validateSuitcaseViewModel = ValidateTravelViewModel(travelName: self.chooseSuitcaseViewModel.travelName, travelDate: self.chooseSuitcaseViewModel.travelDate, suitcaseModelName: self.chooseSuitcaseViewModel.suitcaseCases[indexPath.row].name, items: chooseSuitcaseViewModel.suitcaseCases[indexPath.row].model)
+           
+            validateSuitcaseViewController.validateTravelViewModel = validateSuitcaseViewModel
+            
             self.navigationController?.pushViewController(validateSuitcaseViewController, animated: true)
         }
     }
@@ -78,6 +86,7 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegateFlowLayout 
 
 
 
+#warning("to clean if it's not necessary")
 extension CGFloat {
     static func randomValue() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)

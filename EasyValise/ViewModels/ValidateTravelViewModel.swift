@@ -9,14 +9,38 @@ import Foundation
 
 final class ValidateTravelViewModel {
     let easyValiseRepository = EasyValiseRepository()
+    var sectionsName:[String] = []
     
-    func saveInCoreData(travel: Travel, callback: @escaping (Bool) -> Void) {
-        easyValiseRepository.save(travel: travel) { [] success in
+    var travelName: String
+    var travelDate: Date
+    var suitcaseModelName: String
+    var items: [Item]
+    
+    init(travelName: String, travelDate: Date, suitcaseModelName: String, items: [Item]) {
+        self.travelName = travelName
+        self.travelDate = travelDate
+        self.suitcaseModelName = suitcaseModelName
+        self.items = items
+    }
+    
+    
+    func saveInCoreData(callback: @escaping (Bool) -> Void) {
+        let newTravel = Travel(name: self.travelName, date: self.travelDate, suitcase: Suitcase(items: self.items))
+        easyValiseRepository.save(travel: newTravel) { [] success in
             if success {
                 callback(true)
             } else {
                 callback(false)
             }
         }
+    }
+    
+    func defineSectionsToShow(items: [Item]) {
+        var sectionsUsed: Set<String> = []
+        for item in items {
+            sectionsUsed.insert(item.section)
+        }
+        self.sectionsName = Array(sectionsUsed)
+        self.sectionsName = sectionsName.sorted { $0 < $1 }
     }
 }

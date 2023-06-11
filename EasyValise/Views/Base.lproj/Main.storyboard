@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8w-iA-D02">
-                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Où partez-vous ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfR-qB-FlQ">
                                 <rect key="frame" x="131" y="143" width="131" height="21"/>
@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="R6y-76-XfB">
-                                <rect key="frame" x="-13" y="368" width="392" height="52"/>
+                                <rect key="frame" x="-14" y="368" width="392" height="52"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="handleDatePicker:" destination="wBw-vJ-kH9" eventType="valueChanged" id="upO-7d-NbN"/>
@@ -320,24 +320,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmg-YE-sgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79" y="132"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AoE-B6-4AF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gP9-Yn-TLM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IRn-a4-Pa3">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wBw-vJ-kH9" kind="relationship" relationship="rootViewController" id="LCP-Sf-uFJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RHK-Nw-jSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2675.5725190839694" y="-273.23943661971833"/>
         </scene>
     </scenes>
     <resources>
