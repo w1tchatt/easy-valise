@@ -8,10 +8,17 @@
 import UIKit
 
 class TravelListViewController: UIViewController {
-    var travel: Travel = Travel(name: "", date: .now, suitcase: Suitcase(items: [Item(name: "", isChecked: false, section: Section.drugs.rawValue)]))
-    //private var sectionsName:[String] = []
     
-    let travelListViewModel = TravelListViewModel()
+    var travelListViewModel: TravelListViewModel!
+    
+    init(travelListViewModel: TravelListViewModel) {
+        self.travelListViewModel = travelListViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     @IBOutlet weak var listItemsTableView: UITableView!
   
@@ -20,23 +27,12 @@ class TravelListViewController: UIViewController {
         self.listItemsTableView.delegate = self
         self.listItemsTableView.dataSource = self
         
-        #warning("Logique de faire de renvoyer 'travel' au viewModel ?")
-        travelListViewModel.travel = travel
         travelListViewModel.defineSectionsToShow()
     }
 }
 
 
 extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
-    
-//    private func defineSectionsToShow() {
-//        var sectionsUsed: Set<String> = []
-//        for item in travel.suitcase.items {
-//            sectionsUsed.insert(item.section)
-//        }
-//        sectionsName = Array(sectionsUsed)
-//        sectionsName = sectionsName.sorted { $0 < $1 }
-//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return travelListViewModel.sectionsName.count
@@ -53,10 +49,6 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = listItemsTableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
-//        let section = travelListViewModel.sectionsName[indexPath.section]
-//        let itemsInSection = travelListViewModel.travel.suitcase.items.filter { $0.section == section }
-//        let itemsInSectionOrdered = itemsInSection.sorted { $0.name < $1.name }
-//        let item = itemsInSectionOrdered[indexPath.row]
         let item = travelListViewModel.getItem(indexpathSection: indexPath.section, indexpathRow: indexPath.row)
         var content = cell.defaultContentConfiguration()
         content.text = item.name
@@ -74,26 +66,22 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc private func switchChanged(_ sender: UISwitch) {
-
-        // faire une cell dédiée 
+        
+        // faire une cell dédiée
         guard let cell = sender.superview as? UITableViewCell else {
             return
         }
-
+        
         guard let indexPath = listItemsTableView.indexPath(for: cell) else {
             return
         }
         
-//        let itemsInSection = travelListViewModel.travel.suitcase.items.filter { $0.section == travelListViewModel.sectionsName[indexPath.section] }
-//        let itemsInSectionOrdered = itemsInSection.sorted { $0.name < $1.name }
-//        let item = itemsInSectionOrdered[indexPath.row]
-        
         let item = travelListViewModel.getItem(indexpathSection: indexPath.section, indexpathRow: indexPath.row)
         
-        travelListViewModel.updateIdChecked(for: travel, item: item, isChecked: sender.isOn) { success in
+        travelListViewModel.updateIdChecked(for: self.travelListViewModel.travel, item: item, isChecked: sender.isOn) { [weak self] success in
             if success {
                 item.isChecked = sender.isOn
-                self.listItemsTableView.reloadData()
+                self?.listItemsTableView.reloadData()
             } else {
                 #warning("put a warning message")
             }

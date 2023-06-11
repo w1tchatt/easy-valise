@@ -18,10 +18,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getTravels()
-        
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getTravels()
     }
     
     func getTravels() {
@@ -29,8 +31,8 @@ class HomeViewController: UIViewController {
             if !success {
                 #warning("Put an alert warning")
             }
+            self?.homeTableView.reloadData()
         }
-        self.homeTableView.reloadData()
     }
 }
 
@@ -40,8 +42,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         //return travels.count+1
         return homeViewModel.travels.count+1
     }
-
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row != homeViewModel.travels.count{
             let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
@@ -61,10 +62,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row != homeViewModel.travels.count {
             if let travelListViewController = storyboard.instantiateViewController(withIdentifier: "TravelListViewController") as? TravelListViewController {
-                travelListViewController.travel = homeViewModel.travels[indexPath.row]
+                let travelListViewModel = TravelListViewModel(travel: self.homeViewModel.travels[indexPath.row])
+                travelListViewController.travelListViewModel = travelListViewModel
                 self.navigationController?.pushViewController(travelListViewController, animated: true)
             }
         } else {
@@ -72,5 +75,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 self.navigationController?.pushViewController(createTravelViewController, animated: true)
             }
         }
-    }    
+    }
 }

@@ -10,8 +10,12 @@ import Foundation
 final class TravelListViewModel {
  
     let easyValiseRepository = EasyValiseRepository()
-    var travel: Travel = Travel(name: "", date: .now, suitcase: Suitcase(items: [Item(name: "", isChecked: false, section: Section.drugs.rawValue)]))
+    let travel: Travel
     var sectionsName:[String] = []
+    
+    init(travel: Travel) {
+        self.travel = travel
+    }
     
     func updateIdChecked(for travel: Travel, item: Item, isChecked: Bool, callback: @escaping (Bool) -> Void) {
         easyValiseRepository.updateIsChecked(for: travel, item: item, isChecked: isChecked) { [] success in
@@ -38,5 +42,4 @@ final class TravelListViewModel {
         let itemsInSectionOrdered = itemsInSection.sorted { $0.name < $1.name }
         return itemsInSectionOrdered[indexpathRow]
     }
-    
 }
