@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SuitcaseData" representedClassName=".SuitcaseData" syncable="YES" codeGenerationType="category">
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SuitcaseItem"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SuitcaseItemData"/>
     </entity>
-    <entity name="SuitcaseItem" representedClassName=".SuitcaseItem" syncable="YES" codeGenerationType="category">
+    <entity name="SuitcaseItemData" representedClassName=".SuitcaseItemData" syncable="YES" codeGenerationType="category">
         <attribute name="isChecked" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="section" attributeType="String"/>

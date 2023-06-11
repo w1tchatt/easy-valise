@@ -39,7 +39,7 @@ class ValidateTravelViewController: UIViewController {
     @IBAction func validateTravel(_ sender: UIButton) {
         // save in Coredata
         validateTravelViewModel.saveInCoreData() { [weak self] success in
-            if !success {
+            if success {
                 self?.navigationController?.popToRootViewController(animated: true)
             } else {
                 guard let vc = self else {return}

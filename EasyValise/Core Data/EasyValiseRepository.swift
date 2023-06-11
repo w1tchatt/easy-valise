@@ -26,7 +26,7 @@ final class EasyValiseRepository {
             travelData.suitcase = suitcaseData
             
             for item in travel.suitcase.items {
-                guard let suitcaseItem = SuitcaseItem(context: coreDataStack.viewContext) else {return}
+                guard let suitcaseItem = SuitcaseItemData(context: coreDataStack.viewContext) else {return}
                 suitcaseItem.name = item.name
                 suitcaseItem.isChecked = item.isChecked
                 suitcaseItem.section = item.section
@@ -65,7 +65,7 @@ final class EasyValiseRepository {
             request.predicate = NSPredicate(format: "id == %@", travel.id as CVarArg)
             let travelData = try coreDataStack.viewContext.fetch(request).first
             let suitcaseData = travelData?.suitcase
-            let items = suitcaseData?.items?.allObjects as? [SuitcaseItem]
+            let items = suitcaseData?.items?.allObjects as? [SuitcaseItemData]
             let selectedItem = items?.first(where: { $0.name == item.name })
 
             selectedItem?.isChecked = isChecked
