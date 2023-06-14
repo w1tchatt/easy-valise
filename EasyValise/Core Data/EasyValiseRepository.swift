@@ -17,16 +17,16 @@ final class EasyValiseRepository {
     
     func save(travel: Travel, callback: @escaping (Bool) -> Void) {
         do {
-            guard let travelData = TravelData(context: coreDataStack.viewContext) else { return }
+            guard let travelData = TravelData(context: coreDataStack.viewContext) else { return callback(false) }
             travelData.name = travel.name
             travelData.date = travel.date
             travelData.id = travel.id
             
-            guard let suitcaseData = SuitcaseData(context: coreDataStack.viewContext) else { return }
+            guard let suitcaseData = SuitcaseData(context: coreDataStack.viewContext) else { return callback(false) }
             travelData.suitcase = suitcaseData
             
             for item in travel.suitcase.items {
-                guard let suitcaseItem = SuitcaseItemData(context: coreDataStack.viewContext) else {return}
+                guard let suitcaseItem = SuitcaseItemData(context: coreDataStack.viewContext) else { return callback(false) }
                 suitcaseItem.name = item.name
                 suitcaseItem.isChecked = item.isChecked
                 suitcaseItem.section = item.section

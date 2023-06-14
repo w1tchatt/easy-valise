@@ -16,6 +16,13 @@
 		797FA8022A35D76000418F61 /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8012A35D76000418F61 /* AlertInfo.swift */; };
 		797FA8042A35DF0200418F61 /* SuitcaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8032A35DF0200418F61 /* SuitcaseData.swift */; };
 		797FA8062A35DF2200418F61 /* SuitcaseItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8052A35DF2200418F61 /* SuitcaseItemData.swift */; };
+		797FA8092A35EFD300418F61 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8082A35EFD200418F61 /* TestCoreDataStack.swift */; };
+		797FA80C2A360CF600418F61 /* EasyValiseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA80B2A360CF600418F61 /* EasyValiseMocks.swift */; };
+		797FA80E2A3619CB00418F61 /* ValidateTravelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA80D2A3619CB00418F61 /* ValidateTravelViewModelTests.swift */; };
+		797FA8102A36401100418F61 /* ChooseSuitcaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA80F2A36401100418F61 /* ChooseSuitcaseViewModelTests.swift */; };
+		797FA8122A36431700418F61 /* CreateTravelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8112A36431700418F61 /* CreateTravelViewModelTests.swift */; };
+		797FA8142A364B2D00418F61 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8132A364B2D00418F61 /* HomeViewModelTests.swift */; };
+		797FA8182A37820600418F61 /* TravelListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797FA8172A37820600418F61 /* TravelListViewModelTests.swift */; };
 		7987226C2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */; };
 		7987226D2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */; };
 		798722702A23EF1C00CF4ECA /* ValidateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7987226F2A23EF1C00CF4ECA /* ValidateTravelViewController.swift */; };
@@ -29,7 +36,6 @@
 		79885D8D29F584F7007580E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79885D8B29F584F7007580E6 /* Main.storyboard */; };
 		79885D8F29F584F8007580E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79885D8E29F584F8007580E6 /* Assets.xcassets */; };
 		79885D9229F584F8007580E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79885D9029F584F8007580E6 /* LaunchScreen.storyboard */; };
-		79885D9D29F584F8007580E6 /* EasyValiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79885D9C29F584F8007580E6 /* EasyValiseTests.swift */; };
 		79CE863D29F87D0000E83929 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE863C29F87D0000E83929 /* Item.swift */; };
 		79CE863F29F87D4700E83929 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE863E29F87D4700E83929 /* Section.swift */; };
 		79CE864129F87F9A00E83929 /* Suitcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE864029F87F9A00E83929 /* Suitcase.swift */; };
@@ -66,6 +72,13 @@
 		797FA8012A35D76000418F61 /* AlertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfo.swift; sourceTree = "<group>"; };
 		797FA8032A35DF0200418F61 /* SuitcaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseData.swift; sourceTree = "<group>"; };
 		797FA8052A35DF2200418F61 /* SuitcaseItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseItemData.swift; sourceTree = "<group>"; };
+		797FA8082A35EFD200418F61 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		797FA80B2A360CF600418F61 /* EasyValiseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseMocks.swift; sourceTree = "<group>"; };
+		797FA80D2A3619CB00418F61 /* ValidateTravelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTravelViewModelTests.swift; sourceTree = "<group>"; };
+		797FA80F2A36401100418F61 /* ChooseSuitcaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSuitcaseViewModelTests.swift; sourceTree = "<group>"; };
+		797FA8112A36431700418F61 /* CreateTravelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewModelTests.swift; sourceTree = "<group>"; };
+		797FA8132A364B2D00418F61 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		797FA8172A37820600418F61 /* TravelListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListViewModelTests.swift; sourceTree = "<group>"; };
 		7987226A2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSuitcaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		7987226B2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModelSuitcaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		7987226F2A23EF1C00CF4ECA /* ValidateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTravelViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +95,6 @@
 		79885D9129F584F8007580E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79885D9329F584F8007580E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79885D9829F584F8007580E6 /* EasyValiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79885D9C29F584F8007580E6 /* EasyValiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyValiseTests.swift; sourceTree = "<group>"; };
 		79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CE863C29F87D0000E83929 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		79CE863E29F87D4700E83929 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -129,6 +141,8 @@
 		797FA8072A35E1D600418F61 /* CoreData Test */ = {
 			isa = PBXGroup;
 			children = (
+				797FA8082A35EFD200418F61 /* TestCoreDataStack.swift */,
+				797FA80B2A360CF600418F61 /* EasyValiseMocks.swift */,
 			);
 			path = "CoreData Test";
 			sourceTree = "<group>";
@@ -179,7 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				797FA8072A35E1D600418F61 /* CoreData Test */,
-				79885D9C29F584F8007580E6 /* EasyValiseTests.swift */,
+				797FA80D2A3619CB00418F61 /* ValidateTravelViewModelTests.swift */,
+				797FA80F2A36401100418F61 /* ChooseSuitcaseViewModelTests.swift */,
+				797FA8112A36431700418F61 /* CreateTravelViewModelTests.swift */,
+				797FA8172A37820600418F61 /* TravelListViewModelTests.swift */,
+				797FA8132A364B2D00418F61 /* HomeViewModelTests.swift */,
 			);
 			path = EasyValiseTests;
 			sourceTree = "<group>";
@@ -418,7 +436,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79885D9D29F584F8007580E6 /* EasyValiseTests.swift in Sources */,
+				797FA80E2A3619CB00418F61 /* ValidateTravelViewModelTests.swift in Sources */,
+				797FA8092A35EFD300418F61 /* TestCoreDataStack.swift in Sources */,
+				797FA8182A37820600418F61 /* TravelListViewModelTests.swift in Sources */,
+				797FA8102A36401100418F61 /* ChooseSuitcaseViewModelTests.swift in Sources */,
+				797FA80C2A360CF600418F61 /* EasyValiseMocks.swift in Sources */,
+				797FA8122A36431700418F61 /* CreateTravelViewModelTests.swift in Sources */,
+				797FA8142A364B2D00418F61 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

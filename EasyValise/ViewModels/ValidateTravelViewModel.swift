@@ -8,19 +8,26 @@
 import Foundation
 
 final class ValidateTravelViewModel {
-    let easyValiseRepository = EasyValiseRepository()
-    var sectionsName:[String] = []
+    let easyValiseRepository:EasyValiseRepository
+    var sectionsName: [String] {
+        var sectionsUsed: Set<String> = []
+        for item in items {
+            sectionsUsed.insert(item.section)
+        }
+        return Array(sectionsUsed).sorted { $0 < $1 }
+    }
     
     var travelName: String
     var travelDate: Date
     var suitcaseModelName: String
     var items: [Item]
     
-    init(travelName: String, travelDate: Date, suitcaseModelName: String, items: [Item]) {
+    init(travelName: String, travelDate: Date, suitcaseModelName: String, items: [Item], easyValiseRepository: EasyValiseRepository = EasyValiseRepository()) {
         self.travelName = travelName
         self.travelDate = travelDate
         self.suitcaseModelName = suitcaseModelName
         self.items = items
+        self.easyValiseRepository = easyValiseRepository
     }
     
     
@@ -33,14 +40,5 @@ final class ValidateTravelViewModel {
                 callback(false)
             }
         }
-    }
-    
-    func defineSectionsToShow(items: [Item]) {
-        var sectionsUsed: Set<String> = []
-        for item in items {
-            sectionsUsed.insert(item.section)
-        }
-        self.sectionsName = Array(sectionsUsed)
-        self.sectionsName = sectionsName.sorted { $0 < $1 }
     }
 }

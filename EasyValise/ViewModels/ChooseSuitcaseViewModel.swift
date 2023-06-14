@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ChooseSuicaseViewModel {
+final class ChooseSuitcaseViewModel {
     let suitcaseCases: [SuitcasesModelsEnum] = SuitcasesModelsEnum.allCases
     var travelName: String
     var travelDate: Date

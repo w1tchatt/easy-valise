@@ -9,15 +9,22 @@ import Foundation
 
 final class TravelListViewModel {
  
-    let easyValiseRepository = EasyValiseRepository()
+    let easyValiseRepository: EasyValiseRepository
     let travel: Travel
-    var sectionsName:[String] = []
-    
-    init(travel: Travel) {
-        self.travel = travel
+    var sectionsName: [String] {
+        var sectionsUsed: Set<String> = []
+        for item in travel.suitcase.items {
+            sectionsUsed.insert(item.section)
+        }
+        return Array(sectionsUsed).sorted { $0 < $1 }
     }
     
-    func updateIdChecked(for travel: Travel, item: Item, isChecked: Bool, callback: @escaping (Bool) -> Void) {
+    init(travel: Travel, easyValiseRepository: EasyValiseRepository = EasyValiseRepository()){
+        self.travel = travel
+        self.easyValiseRepository = easyValiseRepository
+    }
+    
+    func updateIsChecked(for travel: Travel, item: Item, isChecked: Bool, callback: @escaping (Bool) -> Void) {
         easyValiseRepository.updateIsChecked(for: travel, item: item, isChecked: isChecked) { [] success in
             if success {
                 callback(true)
@@ -25,15 +32,6 @@ final class TravelListViewModel {
                 callback(false)
             }
         }
-    }
-    
-    func defineSectionsToShow() {
-        var sectionsUsed: Set<String> = []
-        for item in travel.suitcase.items {
-            sectionsUsed.insert(item.section)
-        }
-        self.sectionsName = Array(sectionsUsed)
-        self.sectionsName = sectionsName.sorted { $0 < $1 }
     }
     
     func getItem(indexpathSection:Int, indexpathRow:Int) -> Item {

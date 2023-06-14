@@ -22,7 +22,7 @@ final class CreateTravelViewController: UIViewController {
     
     @IBAction func handleDatePicker(_ sender: UIDatePicker) {
         let selectedDate = sender.date
-        createTravelViewModel.getDate(date: selectedDate)
+        createTravelViewModel.setDate(date: selectedDate)
     }
     
     @IBAction func defineSuitcase(_ sender: UIButton) {
@@ -30,7 +30,7 @@ final class CreateTravelViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let chooseModelSuitcaseViewController = storyboard.instantiateViewController(withIdentifier: "ChooseModelSuitcaseViewController") as? ChooseSuitcaseModelViewController {
                 guard let travelName = destinationTextField.text else {return}
-                let chooseSuitcaseViewModel = ChooseSuicaseViewModel(travelName: travelName, travelDate: self.createTravelViewModel.travelDate)
+                let chooseSuitcaseViewModel = ChooseSuitcaseViewModel(travelName: travelName, travelDate: self.createTravelViewModel.travelDate)
                 
                 chooseModelSuitcaseViewController.chooseSuitcaseViewModel = chooseSuitcaseViewModel
 

@@ -8,8 +8,12 @@
 import Foundation
 
 final class HomeViewModel {
-    let easyValiseRepository = EasyValiseRepository()
+    let easyValiseRepository: EasyValiseRepository
     var travels: [Travel] = []
+    
+    init(easyValiseRepository: EasyValiseRepository = EasyValiseRepository()) {
+        self.easyValiseRepository = easyValiseRepository
+    }
     
     func getTravels(callback: @escaping (Bool) -> Void) {
         easyValiseRepository.getAllTravel { [] success, travels in

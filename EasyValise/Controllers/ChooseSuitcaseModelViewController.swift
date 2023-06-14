@@ -11,9 +11,9 @@ class ChooseSuitcaseModelViewController: UIViewController {
 
     @IBOutlet weak var modelSuitCaseCollectionView: UICollectionView?
 
-    var chooseSuitcaseViewModel: ChooseSuicaseViewModel!
+    var chooseSuitcaseViewModel: ChooseSuitcaseViewModel!
     
-    init(chooseSuitcaseViewModel: ChooseSuicaseViewModel) {
+    init(chooseSuitcaseViewModel: ChooseSuitcaseViewModel) {
         self.chooseSuitcaseViewModel = chooseSuitcaseViewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -31,8 +31,6 @@ class ValidateTravelViewController: UIViewController {
         previewItemsTableview.dataSource = self
 
         descriptionLabel.text = "Validez-vous la liste des articles de '\(validateTravelViewModel.suitcaseModelName)' ? "
-        
-        validateTravelViewModel.defineSectionsToShow(items: self.validateTravelViewModel.items)
     }
     
     

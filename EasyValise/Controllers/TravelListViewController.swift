@@ -26,8 +26,6 @@ class TravelListViewController: UIViewController {
         super.viewDidLoad()
         self.listItemsTableView.delegate = self
         self.listItemsTableView.dataSource = self
-        
-        travelListViewModel.defineSectionsToShow()
     }
 }
 
@@ -78,7 +76,7 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let item = travelListViewModel.getItem(indexpathSection: indexPath.section, indexpathRow: indexPath.row)
         
-        travelListViewModel.updateIdChecked(for: self.travelListViewModel.travel, item: item, isChecked: sender.isOn) { [weak self] success in
+        travelListViewModel.updateIsChecked(for: self.travelListViewModel.travel, item: item, isChecked: sender.isOn) { [weak self] success in
             if success {
                 item.isChecked = sender.isOn
                 self?.listItemsTableView.reloadData()
