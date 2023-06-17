@@ -59,13 +59,6 @@
 			remoteGlobalIDString = 79885D8129F584F7007580E6;
 			remoteInfo = EasyValise;
 		};
-		79885DA329F584F8007580E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 79885D7A29F584F7007580E6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79885D8129F584F7007580E6;
-			remoteInfo = EasyValise;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +95,6 @@
 		79885D9129F584F8007580E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79885D9329F584F8007580E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79885D9829F584F8007580E6 /* EasyValiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyValiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CE863C29F87D0000E83929 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		79CE863E29F87D4700E83929 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		79CE864029F87F9A00E83929 /* Suitcase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suitcase.swift; sourceTree = "<group>"; };
@@ -128,13 +120,6 @@
 			files = (
 				79F5FA752A3E1A0800598DE3 /* FirebasePerformance in Frameworks */,
 				79F5FA732A3E1A0000598DE3 /* FirebaseCrashlytics in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		79885D9F29F584F8007580E6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +167,6 @@
 			children = (
 				79885D8229F584F7007580E6 /* EasyValise.app */,
 				79885D9829F584F8007580E6 /* EasyValiseTests.xctest */,
-				79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,24 +324,6 @@
 			productReference = 79885D9829F584F8007580E6 /* EasyValiseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		79885DA129F584F8007580E6 /* EasyValiseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 79885DB229F584F8007580E6 /* Build configuration list for PBXNativeTarget "EasyValiseUITests" */;
-			buildPhases = (
-				79885D9E29F584F8007580E6 /* Sources */,
-				79885D9F29F584F8007580E6 /* Frameworks */,
-				79885DA029F584F8007580E6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79885DA429F584F8007580E6 /* PBXTargetDependency */,
-			);
-			name = EasyValiseUITests;
-			productName = EasyValiseUITests;
-			productReference = 79885DA229F584F8007580E6 /* EasyValiseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -372,10 +338,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					79885D9729F584F8007580E6 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 79885D8129F584F7007580E6;
-					};
-					79885DA129F584F8007580E6 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 79885D8129F584F7007580E6;
 					};
@@ -399,7 +361,6 @@
 			targets = (
 				79885D8129F584F7007580E6 /* EasyValise */,
 				79885D9729F584F8007580E6 /* EasyValiseTests */,
-				79885DA129F584F8007580E6 /* EasyValiseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,18 +386,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79885DA029F584F8007580E6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		7972D1752A3A5DF300790C88 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -456,13 +411,13 @@
 		};
 		79F5FA702A3E197200598DE3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -521,13 +476,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		79885D9E29F584F8007580E6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -535,11 +483,6 @@
 			isa = PBXTargetDependency;
 			target = 79885D8129F584F7007580E6 /* EasyValise */;
 			targetProxy = 79885D9929F584F8007580E6 /* PBXContainerItemProxy */;
-		};
-		79885DA429F584F8007580E6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 79885D8129F584F7007580E6 /* EasyValise */;
-			targetProxy = 79885DA329F584F8007580E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -777,42 +720,6 @@
 			};
 			name = Release;
 		};
-		79885DB329F584F8007580E6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QBQS223DK4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = richardoc.EasyValiseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyValise;
-			};
-			name = Debug;
-		};
-		79885DB429F584F8007580E6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QBQS223DK4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = richardoc.EasyValiseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = EasyValise;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -839,15 +746,6 @@
 			buildConfigurations = (
 				79885DB029F584F8007580E6 /* Debug */,
 				79885DB129F584F8007580E6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		79885DB229F584F8007580E6 /* Build configuration list for PBXNativeTarget "EasyValiseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				79885DB329F584F8007580E6 /* Debug */,
-				79885DB429F584F8007580E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
