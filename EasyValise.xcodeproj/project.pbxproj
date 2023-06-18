@@ -43,12 +43,10 @@
 		79CE864929FAC55900E83929 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE864829FAC55900E83929 /* CoreDataStack.swift */; };
 		79CE868A29FD241D00E83929 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE868929FD241D00E83929 /* Travel.swift */; };
 		79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */; };
-		79F5FA6D2A3CE4CE00598DE3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA6C2A3CE4CE00598DE3 /* FirebaseCrashlytics */; };
-		79F5FA6F2A3CE4CE00598DE3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA6E2A3CE4CE00598DE3 /* FirebasePerformance */; };
 		79F5FA772A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */; };
 		79F5FA782A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */; };
-		79F5FA802A3F31BB00598DE3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */; };
-		79F5FA822A3F31BB00598DE3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA812A3F31BB00598DE3 /* FirebasePerformance */; };
+		79FCD85F2A3F6230004F91AE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79FCD85E2A3F6230004F91AE /* FirebaseCrashlytics */; };
+		79FCD8612A3F6230004F91AE /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79FCD8602A3F6230004F91AE /* FirebasePerformance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F5FA6F2A3CE4CE00598DE3 /* FirebasePerformance in Frameworks */,
-				79F5FA6D2A3CE4CE00598DE3 /* FirebaseCrashlytics in Frameworks */,
+				79FCD8612A3F6230004F91AE /* FirebasePerformance in Frameworks */,
+				79FCD85F2A3F6230004F91AE /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F5FA822A3F31BB00598DE3 /* FirebasePerformance in Frameworks */,
-				79F5FA802A3F31BB00598DE3 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +290,8 @@
 			);
 			name = EasyValise;
 			packageProductDependencies = (
-				79F5FA6C2A3CE4CE00598DE3 /* FirebaseCrashlytics */,
-				79F5FA6E2A3CE4CE00598DE3 /* FirebasePerformance */,
+				79FCD85E2A3F6230004F91AE /* FirebaseCrashlytics */,
+				79FCD8602A3F6230004F91AE /* FirebasePerformance */,
 			);
 			productName = EasyValise;
 			productReference = 79885D8229F584F7007580E6 /* EasyValise.app */;
@@ -316,8 +312,6 @@
 			);
 			name = EasyValiseTests;
 			packageProductDependencies = (
-				79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */,
-				79F5FA812A3F31BB00598DE3 /* FirebasePerformance */,
 			);
 			productName = EasyValiseTests;
 			productReference = 79885D9829F584F8007580E6 /* EasyValiseTests.xctest */;
@@ -352,7 +346,7 @@
 			);
 			mainGroup = 79885D7929F584F7007580E6;
 			packageReferences = (
-				79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				79FCD85D2A3F6230004F91AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 79885D8329F584F7007580E6 /* Products */;
 			projectDirPath = "";
@@ -678,7 +672,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyValise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EasyValise";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyValise.app/EasyValise";
 			};
 			name = Debug;
 		};
@@ -698,7 +692,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyValise.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EasyValise";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyValise.app/EasyValise";
 			};
 			name = Release;
 		};
@@ -735,35 +729,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		79FCD85D2A3F6230004F91AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79F5FA6C2A3CE4CE00598DE3 /* FirebaseCrashlytics */ = {
+		79FCD85E2A3F6230004F91AE /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 79FCD85D2A3F6230004F91AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		79F5FA6E2A3CE4CE00598DE3 /* FirebasePerformance */ = {
+		79FCD8602A3F6230004F91AE /* FirebasePerformance */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebasePerformance;
-		};
-		79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		79F5FA812A3F31BB00598DE3 /* FirebasePerformance */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 79FCD85D2A3F6230004F91AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
 		};
 /* End XCSwiftPackageProductDependency section */
