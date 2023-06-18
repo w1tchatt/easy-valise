@@ -45,10 +45,10 @@
 		79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */; };
 		79F5FA6D2A3CE4CE00598DE3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA6C2A3CE4CE00598DE3 /* FirebaseCrashlytics */; };
 		79F5FA6F2A3CE4CE00598DE3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA6E2A3CE4CE00598DE3 /* FirebasePerformance */; };
-		79F5FA732A3E1A0000598DE3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA722A3E1A0000598DE3 /* FirebaseCrashlytics */; };
-		79F5FA752A3E1A0800598DE3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA742A3E1A0800598DE3 /* FirebasePerformance */; };
 		79F5FA772A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */; };
 		79F5FA782A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */; };
+		79F5FA802A3F31BB00598DE3 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */; };
+		79F5FA822A3F31BB00598DE3 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79F5FA812A3F31BB00598DE3 /* FirebasePerformance */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,8 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F5FA752A3E1A0800598DE3 /* FirebasePerformance in Frameworks */,
-				79F5FA732A3E1A0000598DE3 /* FirebaseCrashlytics in Frameworks */,
+				79F5FA822A3F31BB00598DE3 /* FirebasePerformance in Frameworks */,
+				79F5FA802A3F31BB00598DE3 /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,6 @@
 				79885D9429F584F8007580E6 /* Sources */,
 				79885D9529F584F8007580E6 /* Frameworks */,
 				79885D9629F584F8007580E6 /* Resources */,
-				79F5FA702A3E197200598DE3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,8 +316,8 @@
 			);
 			name = EasyValiseTests;
 			packageProductDependencies = (
-				79F5FA722A3E1A0000598DE3 /* FirebaseCrashlytics */,
-				79F5FA742A3E1A0800598DE3 /* FirebasePerformance */,
+				79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */,
+				79F5FA812A3F31BB00598DE3 /* FirebasePerformance */,
 			);
 			productName = EasyValiseTests;
 			productReference = 79885D9829F584F8007580E6 /* EasyValiseTests.xctest */;
@@ -408,24 +407,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
-		};
-		79F5FA702A3E197200598DE3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -774,12 +755,12 @@
 			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
 		};
-		79F5FA722A3E1A0000598DE3 /* FirebaseCrashlytics */ = {
+		79F5FA7F2A3F31BB00598DE3 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		79F5FA742A3E1A0800598DE3 /* FirebasePerformance */ = {
+		79F5FA812A3F31BB00598DE3 /* FirebasePerformance */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 79F5FA6B2A3CE4CE00598DE3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebasePerformance;
