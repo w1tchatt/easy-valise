@@ -77,4 +77,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            homeViewModel.deleteTravel(travel: homeViewModel.travels[indexPath.row]) { success in
+                if success {
+                    self.getTravels()
+                } else {
+                    AlertInfo.display(title: "Erreur", message: "Erreur lors de la suppression du voyage", vc: self)
+                }
+            }
+        }
+    }
 }

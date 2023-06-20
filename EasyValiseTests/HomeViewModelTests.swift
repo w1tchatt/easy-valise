@@ -63,6 +63,56 @@ final class HomeViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(date, "11/06/2023")
+    }
+    
+    func testDeleteTravelSuccess() {
         
+        // Given
+        let testCoreDataStack = TestCoreDataStack()
+        let easyValiseRepository = EasyValiseRepository(coreDataStack: testCoreDataStack)
+        let homeViewModel = HomeViewModel(easyValiseRepository: easyValiseRepository)
+        
+        easyValiseRepository.save(travel: EasyValiseMocks.travelMock) { success in
+            if !success {
+                XCTFail("Erreur")
+            }
+        }
+        easyValiseRepository.save(travel: EasyValiseMocks.travelMock2) { success in
+            if !success {
+                XCTFail("Erreur")
+            }
+        }
+        
+        // When
+        easyValiseRepository.deleteTravel(for: EasyValiseMocks.travelMock) { success in
+            if !success {
+                XCTFail("Erreur")
+            }
+        }
+        
+        // Then
+        homeViewModel.getTravels { success in
+            if success {
+                XCTAssertEqual(homeViewModel.travels.count, 1)
+                
+                XCTAssertEqual(homeViewModel.travels[0].name, EasyValiseMocks.travelNameMock2)
+                XCTAssertEqual(homeViewModel.travels[0].date, EasyValiseMocks.dateMock2)
+                XCTAssertEqual(homeViewModel.travels[0].suitcase.items.count, EasyValiseMocks.listItemsMock2.count)
+            }
+        }
+    }
+    
+    func testDeleteTravelFail() {
+        // Given
+        let testCoreDataStack = TestCoreDataStackKO()
+        let easyValiseRepository = EasyValiseRepository(coreDataStack: testCoreDataStack)
+        let homeViewModel = HomeViewModel(easyValiseRepository: easyValiseRepository)
+
+        // When
+        homeViewModel.deleteTravel(travel: EasyValiseMocks.travelMock) { success in
+            
+        // Then
+            XCTAssertEqual(success, false)
+        }
     }
 }

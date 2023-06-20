@@ -67,15 +67,28 @@ final class EasyValiseRepository {
             let suitcaseData = travelData?.suitcase
             let items = suitcaseData?.items?.allObjects as? [SuitcaseItemData]
             let selectedItem = items?.first(where: { $0.name == item.name })
-
+            
             selectedItem?.isChecked = isChecked
-
+            
             try coreDataStack.viewContext.save()
             callback(true)
-
+            
         } catch {
             callback(false)
         }
-        
+    }
+    
+    func deleteTravel(for travel: Travel, callback: @escaping (Bool) -> Void) {
+        let request: NSFetchRequest<TravelData> = TravelData.fetchRequest()
+        do {
+            request.predicate = NSPredicate(format: "id == %@", travel.id as CVarArg)
+            if let travelData = try coreDataStack.viewContext.fetch(request).first {
+                try coreDataStack.viewContext.delete(travelData)
+                try coreDataStack.viewContext.save()
+                callback(true)
+            }
+        } catch {
+            callback(false)
+        }
     }
 }

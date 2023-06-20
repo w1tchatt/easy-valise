@@ -26,6 +26,16 @@ final class HomeViewModel {
         }
     }
     
+    func deleteTravel(travel:Travel, callback: @escaping (Bool) -> Void) {
+        easyValiseRepository.deleteTravel(for: travel) { success in
+            if success {
+                callback(true)
+            } else {
+                callback(false)
+            }
+        }
+    }
+    
     func dateFormatted(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
