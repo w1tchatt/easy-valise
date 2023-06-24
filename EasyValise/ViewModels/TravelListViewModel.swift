@@ -9,7 +9,7 @@ import Foundation
 
 final class TravelListViewModel {
  
-    let easyValiseRepository: EasyValiseRepository
+    private let easyValiseRepository: EasyValiseRepository
     let travel: Travel
     var sectionsName: [String] {
         var sectionsUsed: Set<String> = []

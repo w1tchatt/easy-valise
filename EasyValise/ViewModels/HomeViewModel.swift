@@ -8,7 +8,7 @@
 import Foundation
 
 final class HomeViewModel {
-    let easyValiseRepository: EasyValiseRepository
+    private let easyValiseRepository: EasyValiseRepository
     var travels: [Travel] = []
     
     init(easyValiseRepository: EasyValiseRepository = EasyValiseRepository()) {

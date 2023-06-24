@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelListViewController: UIViewController {
+final class TravelListViewController: UIViewController {
     
     var travelListViewModel: TravelListViewModel!
     
@@ -28,7 +28,6 @@ class TravelListViewController: UIViewController {
         self.listItemsTableView.dataSource = self
     }
 }
-
 
 extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -65,7 +64,6 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc private func switchChanged(_ sender: UISwitch) {
         
-        // faire une cell dédiée
         guard let cell = sender.superview as? UITableViewCell else {
             return
         }

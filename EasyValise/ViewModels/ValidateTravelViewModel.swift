@@ -8,7 +8,7 @@
 import Foundation
 
 final class ValidateTravelViewModel {
-    let easyValiseRepository:EasyValiseRepository
+    private let easyValiseRepository:EasyValiseRepository
     var sectionsName: [String] {
         var sectionsUsed: Set<String> = []
         for item in items {

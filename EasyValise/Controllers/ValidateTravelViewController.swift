@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValidateTravelViewController: UIViewController {
+final class ValidateTravelViewController: UIViewController {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var previewItemsTableview: UITableView!
@@ -34,7 +34,7 @@ class ValidateTravelViewController: UIViewController {
     }
     
     
-    @IBAction func validateTravel(_ sender: UIButton) {
+    @IBAction private func validateTravel(_ sender: UIButton) {
         // save in Coredata
         validateTravelViewModel.saveInCoreData() { [weak self] success in
             if success {

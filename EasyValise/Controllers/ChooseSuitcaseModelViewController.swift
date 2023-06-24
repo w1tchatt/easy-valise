@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChooseSuitcaseModelViewController: UIViewController {
+final class ChooseSuitcaseModelViewController: UIViewController {
 
     @IBOutlet weak var modelSuitCaseCollectionView: UICollectionView?
 
@@ -27,7 +27,6 @@ class ChooseSuitcaseModelViewController: UIViewController {
         
         self.modelSuitCaseCollectionView?.register(UINib(nibName: "ModelSuitcaseCollectionViewCell", bundle:nil), forCellWithReuseIdentifier: "ModelSuitcase")
         
-        
         self.modelSuitCaseCollectionView?.delegate = self
         self.modelSuitCaseCollectionView?.dataSource = self
         
@@ -37,9 +36,7 @@ class ChooseSuitcaseModelViewController: UIViewController {
         layout.minimumInteritemSpacing = 4
         
         modelSuitCaseCollectionView?.setCollectionViewLayout(layout, animated: true)
-
     }
-
 }
 
 extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -64,10 +61,7 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollect
             self.navigationController?.pushViewController(validateSuitcaseViewController, animated: true)
         }
     }
-
-
 }
-
 
 extension ChooseSuitcaseModelViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

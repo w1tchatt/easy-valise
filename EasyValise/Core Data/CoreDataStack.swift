@@ -12,8 +12,6 @@ class CoreDataStack {
     
     static let shared: CoreDataStack = CoreDataStack()
     
-   // private init() {}
-    
     private let modelName: String = "EasyValise"
     
     private lazy var persistentContainer: NSPersistentContainer = {
