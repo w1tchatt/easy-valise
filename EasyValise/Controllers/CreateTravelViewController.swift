@@ -37,4 +37,8 @@ final class CreateTravelViewController: UIViewController {
             AlertInfo.display(title: "Erreur", message: "Merci de renseigner une destination valide", vc: self)
         }
     }
+    
+    @IBAction private func dismissKeyboard(_ sender: Any) {
+        destinationTextField.resignFirstResponder()
+    }
 }

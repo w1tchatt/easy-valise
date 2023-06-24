@@ -51,6 +51,7 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         content.text = item.name
         
         let switchControl = UISwitch()
+        switchControl.onTintColor = UIColor.systemIndigo
         if item.isChecked {
             switchControl.isOn = true
         } else {
@@ -58,8 +59,30 @@ extension TravelListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.accessoryView = switchControl
         switchControl.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
+        content.textProperties.font = UIFont(name: "Gill Sans", size: 19.0) ?? UIFont()
         cell.contentConfiguration = content
+        cell.backgroundColor = UIColor(named: "Orange")
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(named: "Orange")
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemIndigo
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.text = travelListViewModel.sectionsName[section]
+
+        headerView.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ])
+
+        return headerView
     }
     
     @objc private func switchChanged(_ sender: UISwitch) {
