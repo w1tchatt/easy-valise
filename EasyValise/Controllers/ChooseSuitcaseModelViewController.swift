@@ -49,10 +49,8 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegate, UICollect
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = modelSuitCaseCollectionView?.dequeueReusableCell(withReuseIdentifier: "ModelSuitcase", for: indexPath) as? ModelSuitcaseCollectionViewCell else {return UICollectionViewCell()}
-        // idéalement créer un viewmodel pour la cell pour set up la celle
         let suitcaseModel = chooseSuitcaseViewModel.suitcaseCases[indexPath.row]
-        cell.configCell(suitCaseName: suitcaseModel.name)
-        //cell.backgroundColor = .randomColor()
+        cell.configCell(suitCaseName: suitcaseModel.name, suitcaseModel: suitcaseModel)
         return cell
     }
 
@@ -81,24 +79,5 @@ extension ChooseSuitcaseModelViewController: UICollectionViewDelegateFlowLayout 
         let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
 
         return CGSize(width: widthPerItem - 8, height: widthPerItem - 8)
-    }
-}
-
-
-
-#warning("to clean if it's not necessary")
-extension CGFloat {
-    static func randomValue() -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
-}
-extension UIColor {
-    static func randomColor() -> UIColor {
-        return UIColor(
-           red:   .randomValue(),
-           green: .randomValue(),
-           blue:  .randomValue(),
-           alpha: 1.0
-        )
     }
 }

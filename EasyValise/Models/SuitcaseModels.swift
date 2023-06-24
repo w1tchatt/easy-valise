@@ -16,13 +16,13 @@ enum SuitcasesModelsEnum: CaseIterable {
     var name: String {
         switch self {
         case .shortTravelSummer:
-            return "Valise été court"
+            return "Petite valise été"
         case .longTravelSummer:
-            return "Valise été long"
+            return "Grande valise été"
         case .shortTravelWinter:
-            return "Valise hiver court"
+            return "Petite valise hiver"
         case .longTravelWinter:
-            return "Valise hiver long"
+            return "Grande Valise hiver"
         }
     }
     
