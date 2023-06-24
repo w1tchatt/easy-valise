@@ -17,9 +17,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.homeTableView.register(UINib(nibName: "HomeTableViewCell", bundle:nil), forCellReuseIdentifier: "HomeTableViewCell")
+        self.homeTableView.register(UINib(nibName: "CreateTravelViewCell", bundle:nil), forCellReuseIdentifier: "CreateTravelViewCell")
         
         self.homeTableView.delegate = self
         self.homeTableView.dataSource = self
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,18 +50,24 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row != homeViewModel.travels.count{
-            let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
-            var content = cell.defaultContentConfiguration()
-            content.text = homeViewModel.travels[indexPath.row].name
+//            let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
+//            var content = cell.defaultContentConfiguration()
+//            content.text = homeViewModel.travels[indexPath.row].name
+//            let date = homeViewModel.dateFormatted(date: homeViewModel.travels[indexPath.row].date)
+//            content.secondaryText = date
+//            cell.contentConfiguration = content
+            
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
             let date = homeViewModel.dateFormatted(date: homeViewModel.travels[indexPath.row].date)
-            content.secondaryText = date
-            cell.contentConfiguration = content
+            let name = homeViewModel.travels[indexPath.row].name
+            cell.setup(travelName: name, date: date)
             return cell
         } else {
-            let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
-            var content = cell.defaultContentConfiguration()
-            content.text = "CREER UN NOUVEAU VOYAGE"
-            cell.contentConfiguration = content
+//            let cell = homeTableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath)
+//            var content = cell.defaultContentConfiguration()
+//            content.text = "CREER UN NOUVEAU VOYAGE"
+//            cell.contentConfiguration = content
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: "CreateTravelViewCell", for: indexPath) as? CreateTravelViewCell else { return UITableViewCell()}
             return cell
         }
     }
@@ -79,7 +89,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete && indexPath.row != homeViewModel.travels.count {
             homeViewModel.deleteTravel(travel: homeViewModel.travels[indexPath.row]) { success in
                 if success {
                     self.getTravels()
@@ -88,5 +98,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
+    }
+    
+    // last row no deletable
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row != homeViewModel.travels.count
     }
 }

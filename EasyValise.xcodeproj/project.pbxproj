@@ -47,6 +47,10 @@
 		79F5FA782A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */; };
 		79FCD85F2A3F6230004F91AE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 79FCD85E2A3F6230004F91AE /* FirebaseCrashlytics */; };
 		79FCD8612A3F6230004F91AE /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 79FCD8602A3F6230004F91AE /* FirebasePerformance */; };
+		79FCD8692A438D28004F91AE /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCD8672A438D28004F91AE /* HomeTableViewCell.swift */; };
+		79FCD86A2A438D28004F91AE /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD8682A438D28004F91AE /* HomeTableViewCell.xib */; };
+		79FCD86F2A439AC1004F91AE /* CreateTravelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FCD86D2A439AC1004F91AE /* CreateTravelViewCell.swift */; };
+		79FCD8702A439AC1004F91AE /* CreateTravelViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79FCD86E2A439AC1004F91AE /* CreateTravelViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		79CE868929FD241D00E83929 /* Travel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		79CE868B29FE6CB800E83929 /* SuitcaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuitcaseModels.swift; sourceTree = "<group>"; };
 		79F5FA762A3E25DB00598DE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		79FCD8672A438D28004F91AE /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		79FCD8682A438D28004F91AE /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		79FCD86D2A439AC1004F91AE /* CreateTravelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewCell.swift; sourceTree = "<group>"; };
+		79FCD86E2A439AC1004F91AE /* CreateTravelViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTravelViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +206,10 @@
 		79885DB529F6FC97007580E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79FCD8E92A46F2F2004F91AE /* ItemCell */,
 				79885D8B29F584F7007580E6 /* Main.storyboard */,
 				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
+				79FCD86B2A439A72004F91AE /* HomeCell */,
 				7987226E2A22791D00CF4ECA /* ModelSuitcaseCollectionViewCell */,
 			);
 			path = Views;
@@ -270,6 +280,40 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79FCD8662A438CDF004F91AE /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79FCD8672A438D28004F91AE /* HomeTableViewCell.swift */,
+				79FCD8682A438D28004F91AE /* HomeTableViewCell.xib */,
+			);
+			path = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		79FCD86B2A439A72004F91AE /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				79FCD86C2A439A84004F91AE /* CreateTravelViewCell */,
+				79FCD8662A438CDF004F91AE /* HomeTableViewCell */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		79FCD86C2A439A84004F91AE /* CreateTravelViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79FCD86D2A439AC1004F91AE /* CreateTravelViewCell.swift */,
+				79FCD86E2A439AC1004F91AE /* CreateTravelViewCell.xib */,
+			);
+			path = CreateTravelViewCell;
+			sourceTree = "<group>";
+		};
+		79FCD8E92A46F2F2004F91AE /* ItemCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ItemCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +411,8 @@
 				7987226D2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib in Resources */,
 				79F5FA772A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */,
 				79885D8F29F584F8007580E6 /* Assets.xcassets in Resources */,
+				79FCD8702A439AC1004F91AE /* CreateTravelViewCell.xib in Resources */,
+				79FCD86A2A438D28004F91AE /* HomeTableViewCell.xib in Resources */,
 				79885D8D29F584F7007580E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +457,7 @@
 			files = (
 				797FA8042A35DF0200418F61 /* SuitcaseData.swift in Sources */,
 				79CE863F29F87D4700E83929 /* Section.swift in Sources */,
+				79FCD8692A438D28004F91AE /* HomeTableViewCell.swift in Sources */,
 				79CE863D29F87D0000E83929 /* Item.swift in Sources */,
 				79CE864129F87F9A00E83929 /* Suitcase.swift in Sources */,
 				79885D8A29F584F7007580E6 /* HomeViewController.swift in Sources */,
@@ -431,6 +478,7 @@
 				798722F32A2BB01600CF4ECA /* ValidateTravelViewModel.swift in Sources */,
 				79CE864929FAC55900E83929 /* CoreDataStack.swift in Sources */,
 				79CE868C29FE6CB800E83929 /* SuitcaseModels.swift in Sources */,
+				79FCD86F2A439AC1004F91AE /* CreateTravelViewCell.swift in Sources */,
 				79885D8829F584F7007580E6 /* SceneDelegate.swift in Sources */,
 				79795E082A1BA5E10066FDC7 /* ChooseSuitcaseModelViewController.swift in Sources */,
 				79795E062A1BA2700066FDC7 /* HomeViewModel.swift in Sources */,

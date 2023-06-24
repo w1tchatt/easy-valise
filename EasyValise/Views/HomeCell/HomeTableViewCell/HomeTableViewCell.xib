@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="EasyValise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="LAOS-VIETNAM-CAMBODGE" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-7s-e6i">
+                        <rect key="frame" x="75" y="15" width="230" height="74"/>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                        <color key="textColor" systemColor="systemIndigoColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rma-FW-hj7">
+                        <rect key="frame" x="15" y="40.666666666666657" width="50" height="48"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="1vM-sa-FSv"/>
+                            <constraint firstAttribute="width" constant="50" id="Yez-xD-sZe"/>
+                        </constraints>
+                        <imageReference key="image" image="suitcase.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color name="AccentColor"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKr-8k-Csv">
+                        <rect key="frame" x="75" y="94" width="36" height="20"/>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                        <color key="textColor" name="DarkGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZF-ex-Snj">
+                        <rect key="frame" x="15" y="128" width="290" height="1"/>
+                        <color key="backgroundColor" name="DarkGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="tCi-41-cw1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="bKr-8k-Csv" firstAttribute="top" secondItem="lgs-7s-e6i" secondAttribute="bottom" constant="5" id="BlL-Zk-K7f"/>
+                    <constraint firstItem="bKr-8k-Csv" firstAttribute="leading" secondItem="lgs-7s-e6i" secondAttribute="leading" id="JrX-Fq-EYk"/>
+                    <constraint firstAttribute="trailing" secondItem="lgs-7s-e6i" secondAttribute="trailing" constant="15" id="NQC-Uq-7sw"/>
+                    <constraint firstItem="rma-FW-hj7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nga-wM-hOI"/>
+                    <constraint firstItem="XZF-ex-Snj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="RVq-nr-czh"/>
+                    <constraint firstItem="lgs-7s-e6i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="edt-94-Xum"/>
+                    <constraint firstItem="lgs-7s-e6i" firstAttribute="leading" secondItem="rma-FW-hj7" secondAttribute="trailing" constant="10" id="eoW-XF-uXP"/>
+                    <constraint firstAttribute="bottom" secondItem="bKr-8k-Csv" secondAttribute="bottom" constant="15" id="fo1-CS-8KJ"/>
+                    <constraint firstAttribute="bottom" secondItem="XZF-ex-Snj" secondAttribute="bottom" id="ixp-7Q-WLQ"/>
+                    <constraint firstAttribute="trailing" secondItem="XZF-ex-Snj" secondAttribute="trailing" constant="15" id="jTX-fd-jBW"/>
+                    <constraint firstItem="rma-FW-hj7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="lOf-lk-5F5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="bKr-8k-Csv" id="hNY-4w-wMI"/>
+                <outlet property="travelNameLabel" destination="lgs-7s-e6i" id="CLC-uh-q4Z"/>
+            </connections>
+            <point key="canvasLocation" x="157.25190839694656" y="-70.070422535211264"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="suitcase.fill" catalog="system" width="128" height="100"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGrey">
+            <color red="0.0" green="0.13699999451637268" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
