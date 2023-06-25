@@ -206,7 +206,6 @@
 		79885DB529F6FC97007580E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				79FCD8E92A46F2F2004F91AE /* ItemCell */,
 				79885D8B29F584F7007580E6 /* Main.storyboard */,
 				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
 				79FCD86B2A439A72004F91AE /* HomeCell */,
@@ -307,13 +306,6 @@
 				79FCD86E2A439AC1004F91AE /* CreateTravelViewCell.xib */,
 			);
 			path = CreateTravelViewCell;
-			sourceTree = "<group>";
-		};
-		79FCD8E92A46F2F2004F91AE /* ItemCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ItemCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

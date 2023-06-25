@@ -309,6 +309,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Orange"/>
                         <color key="selectedImageTintColor" systemColor="systemIndigoColor"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="Orange"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="edI-do-vCr" kind="relationship" relationship="viewControllers" id="df9-KO-GV9"/>
@@ -334,6 +337,9 @@
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="Orange"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="p1T-et-2pu" kind="relationship" relationship="rootViewController" id="CsQ-81-tQZ"/>
