@@ -65,18 +65,4 @@ final class ValidateTravelViewModelTests: XCTestCase {
         XCTAssertEqual(validateTravelViewModel.sectionsName[1], Section.toiletItems.rawValue)
         XCTAssertEqual(validateTravelViewModel.sectionsName[2], Section.clothes.rawValue)
     }
-    
-//Section: String, Codable {
-//    case clothes = "Vêtements"
-//    case toiletItems = "Articles de toilette"
-//    case accessories = "Accessoires"
-//
-//    func defineSectionsToShow(items: [Item]) {
-//        var sectionsUsed: Set<String> = []
-//        for item in items {
-//            sectionsUsed.insert(item.section)
-//        }
-//        self.sectionsName = Array(sectionsUsed)
-//        self.sectionsName = sectionsName.sorted { $0 < $1 }
-//    }
 }
