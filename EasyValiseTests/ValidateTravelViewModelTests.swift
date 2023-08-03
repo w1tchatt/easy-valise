@@ -65,4 +65,14 @@ final class ValidateTravelViewModelTests: XCTestCase {
         XCTAssertEqual(validateTravelViewModel.sectionsName[1], Section.toiletItems.rawValue)
         XCTAssertEqual(validateTravelViewModel.sectionsName[2], Section.clothes.rawValue)
     }
+    
+    func testAddNewItem() {
+        let itemName = "Jeans"
+        
+        let validateTravelViewModel = ValidateTravelViewModel(travelName: EasyValiseMocks.travelNameMock, travelDate: EasyValiseMocks.dateMock, suitcaseModelName: "valise modele", items: EasyValiseMocks.listItemsMock)
+        
+        validateTravelViewModel.addNewItem(itemName: itemName, sectionName: Section.clothes.rawValue) { success in
+            XCTAssertEqual(validateTravelViewModel.items.last?.name, "Jeans")
+        }
+    }
 }

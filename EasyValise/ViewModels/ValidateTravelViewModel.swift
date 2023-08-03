@@ -41,4 +41,10 @@ final class ValidateTravelViewModel {
             }
         }
     }
+    
+    func addNewItem(itemName: String, sectionName: Section.RawValue, callback: @escaping (Bool) -> Void) {
+        let newItem = Item(name: itemName, isChecked: false, section: sectionName)
+        self.items.append(newItem)
+        callback(true)
+    }
 }

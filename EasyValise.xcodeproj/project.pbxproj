@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792028D62A72BCAA004FEDC3 /* AddItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792028D42A72BCAA004FEDC3 /* AddItemTableViewCell.swift */; };
+		792028D72A72BCAA004FEDC3 /* AddItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792028D52A72BCAA004FEDC3 /* AddItemTableViewCell.xib */; };
 		79795E022A17A2A00066FDC7 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E012A17A2A00066FDC7 /* TravelListViewController.swift */; };
 		79795E042A1A84E60066FDC7 /* CreateTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */; };
 		79795E062A1BA2700066FDC7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79795E052A1BA2700066FDC7 /* HomeViewModel.swift */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		792028D42A72BCAA004FEDC3 /* AddItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewCell.swift; sourceTree = "<group>"; };
+		792028D52A72BCAA004FEDC3 /* AddItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemTableViewCell.xib; sourceTree = "<group>"; };
 		79795E012A17A2A00066FDC7 /* TravelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
 		79795E032A1A84E60066FDC7 /* CreateTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTravelViewController.swift; sourceTree = "<group>"; };
 		79795E052A1BA2700066FDC7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		792028D32A72BC36004FEDC3 /* AddItemTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				792028D42A72BCAA004FEDC3 /* AddItemTableViewCell.swift */,
+				792028D52A72BCAA004FEDC3 /* AddItemTableViewCell.xib */,
+			);
+			path = AddItemTableViewCell;
+			sourceTree = "<group>";
+		};
 		797FA8002A35D74300418F61 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 				79885D8B29F584F7007580E6 /* Main.storyboard */,
 				79885D9029F584F8007580E6 /* LaunchScreen.storyboard */,
 				79FCD86B2A439A72004F91AE /* HomeCell */,
+				792028D32A72BC36004FEDC3 /* AddItemTableViewCell */,
 				7987226E2A22791D00CF4ECA /* ModelSuitcaseCollectionViewCell */,
 			);
 			path = Views;
@@ -403,6 +417,7 @@
 				7987226D2A22625100CF4ECA /* ModelSuitcaseCollectionViewCell.xib in Resources */,
 				79F5FA772A3E25DB00598DE3 /* GoogleService-Info.plist in Resources */,
 				79885D8F29F584F8007580E6 /* Assets.xcassets in Resources */,
+				792028D72A72BCAA004FEDC3 /* AddItemTableViewCell.xib in Resources */,
 				79FCD8702A439AC1004F91AE /* CreateTravelViewCell.xib in Resources */,
 				79FCD86A2A438D28004F91AE /* HomeTableViewCell.xib in Resources */,
 				79885D8D29F584F7007580E6 /* Main.storyboard in Resources */,
@@ -463,6 +478,7 @@
 				798722F52A2BDE3500CF4ECA /* TravelListViewModel.swift in Sources */,
 				797FA8022A35D76000418F61 /* AlertInfo.swift in Sources */,
 				797FA8062A35DF2200418F61 /* SuitcaseItemData.swift in Sources */,
+				792028D62A72BCAA004FEDC3 /* AddItemTableViewCell.swift in Sources */,
 				798722702A23EF1C00CF4ECA /* ValidateTravelViewController.swift in Sources */,
 				798722F12A293B3100CF4ECA /* EasyValiseRepository.swift in Sources */,
 				797FA7FF2A34B52F00418F61 /* CreateTravelViewModel.swift in Sources */,
