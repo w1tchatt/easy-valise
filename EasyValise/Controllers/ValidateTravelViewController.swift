@@ -97,15 +97,6 @@ extension ValidateTravelViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let section = self.validateTravelViewModel.sectionsName[indexPath.section]
-//        let itemsInSection = self.validateTravelViewModel.items.filter { $0.section == section }
-//
-//        if indexPath.row == itemsInSection.count {
-//            print("coucou")
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor(named: "Orange")
@@ -124,6 +115,28 @@ extension ValidateTravelViewController: UITableViewDelegate, UITableViewDataSour
         ])
 
         return headerView
+    }
+    
+    // Cannot edit add item row
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let section = self.validateTravelViewModel.sectionsName[indexPath.section]
+        let itemsInSection = self.validateTravelViewModel.items.filter { $0.section == section }
+        if indexPath.row != itemsInSection.count {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    // delete an item function
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let section = self.validateTravelViewModel.sectionsName[indexPath.section]
+        let itemsInSection = self.validateTravelViewModel.items.filter { $0.section == section }
+        if editingStyle == .delete && indexPath.row != itemsInSection.count {
+            validateTravelViewModel.deleteItem(item: itemsInSection[indexPath.row]) { success in
+                self.previewItemsTableview.reloadData()
+            }
+        }
     }
 }
 

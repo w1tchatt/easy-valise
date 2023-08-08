@@ -21,3 +21,9 @@ class Item: Codable {
         self.section = section
     }
 }
+
+extension Item: Equatable {
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.name == rhs.name && lhs.section == rhs.section
+    }
+}

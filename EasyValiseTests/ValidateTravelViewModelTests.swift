@@ -75,4 +75,14 @@ final class ValidateTravelViewModelTests: XCTestCase {
             XCTAssertEqual(validateTravelViewModel.items.last?.name, "Jeans")
         }
     }
+    
+    func testDeleteItem() {
+        let itemName = "Jeans"
+        
+        let validateTravelViewModel = ValidateTravelViewModel(travelName: EasyValiseMocks.travelNameMock, travelDate: EasyValiseMocks.dateMock, suitcaseModelName: "valise modele", items: EasyValiseMocks.listItemsMock)
+        
+        validateTravelViewModel.deleteItem(item: EasyValiseMocks.itemClothes1) { success in
+            XCTAssertFalse(validateTravelViewModel.items.contains(where: {$0 == EasyValiseMocks.itemClothes1}))
+        }
+    }
 }

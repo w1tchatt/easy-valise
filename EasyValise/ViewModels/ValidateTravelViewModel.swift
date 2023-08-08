@@ -47,4 +47,11 @@ final class ValidateTravelViewModel {
         self.items.append(newItem)
         callback(true)
     }
+    
+    func deleteItem(item: Item, callback: @escaping (Bool) -> Void) {
+        if let index = self.items.firstIndex(of: item) {
+          items.remove(at: index)
+        }
+        callback(true)
+    }
 }
